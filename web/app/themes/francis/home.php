@@ -13,7 +13,8 @@ get_header(); ?>
                 ));
                 if ($portfolioObject->have_posts()): ?>
                     <ul>
-                        <?php while ($portfolioObject->have_posts()):$portfolioObject->the_post();
+                        <?php
+                        while ($portfolioObject->have_posts()):$portfolioObject->the_post();
                             $portfolioImageUrl = "";
                             if (has_post_thumbnail()) {
                                 // 아이캐치 이미지가 있을 경우
@@ -35,10 +36,14 @@ get_header(); ?>
                                     </div>
                                 </a>
                             </li>
-                        <?php endwhile; ?>
+                        <?php
+                        endwhile;
+                        ?>
                     </ul>
-                <?php endif;
-                wp_reset_postdata(); ?>
+                <?php
+                endif;
+                wp_reset_postdata();
+                ?>
             </section>
             <hr>
             <section class="japan">
@@ -52,7 +57,8 @@ get_header(); ?>
                 ));
                 if ($japanEpisodeObject->have_posts()): ?>
                     <ul>
-                        <?php while ($japanEpisodeObject->have_posts()):$japanEpisodeObject->the_post();
+                        <?php
+                        while ($japanEpisodeObject->have_posts()):$japanEpisodeObject->the_post();
                             $japanEpisodeImageUrl = "";
                             if (has_post_thumbnail()) {
                                 // 아이캐치 이미지가 있을 경우
@@ -74,10 +80,14 @@ get_header(); ?>
                                     </div>
                                 </a>
                             </li>
-                        <?php endwhile; ?>
+                        <?php
+                        endwhile;
+                        ?>
                     </ul>
-                <?php endif;
-                wp_reset_postdata(); ?>
+                <?php
+                endif;
+                wp_reset_postdata();
+                ?>
             </section>
             <hr>
             <section class="develop">
@@ -91,7 +101,8 @@ get_header(); ?>
                 ));
                 if ($developEpisodeObject->have_posts()): ?>
                     <ul>
-                        <?php while ($developEpisodeObject->have_posts()):$developEpisodeObject->the_post();
+                        <?php
+                        while ($developEpisodeObject->have_posts()):$developEpisodeObject->the_post();
                             $developEpisodeImageUrl = "";
                             if (has_post_thumbnail()) {
                                 // 아이캐치 이미지가 있을 경우
@@ -112,10 +123,14 @@ get_header(); ?>
                                     </div>
                                 </a>
                             </li>
-                        <?php endwhile; ?>
+                        <?php
+                        endwhile;
+                        ?>
                     </ul>
-                <?php endif;
-                wp_reset_postdata(); ?>
+                <?php
+                endif;
+                wp_reset_postdata();
+                ?>
             </section>
             <hr>
             <section class="chitchat">
@@ -129,7 +144,8 @@ get_header(); ?>
                 ));
                 if ($chitchatObject->have_posts()): ?>
                     <ul>
-                        <?php while ($chitchatObject->have_posts()):$chitchatObject->the_post();
+                        <?php
+                        while ($chitchatObject->have_posts()):$chitchatObject->the_post();
                             $chitchatImageUrl = "";
                             if (has_post_thumbnail()) {
                                 // 아이캐치 이미지가 있을 경우
@@ -150,10 +166,14 @@ get_header(); ?>
                                     </div>
                                 </a>
                             </li>
-                        <?php endwhile; ?>
+                        <?php
+                        endwhile;
+                        ?>
                     </ul>
-                <?php endif;
-                wp_reset_postdata(); ?>
+                <?php
+                endif;
+                wp_reset_postdata();
+                ?>
             </section>
         </main><!-- .site-main -->
     </div><!-- .content-area -->
