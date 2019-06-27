@@ -60,7 +60,7 @@ function add_custom_post_type() {
         "supports" => array("title", "editor", "thumbnail"),
         'menu_position' => 21,
     );
-    register_post_type('japan_episode', $japanEpisodeParams);
+    register_post_type('japan', $japanEpisodeParams);
 
     $developEpisodeParams = array(
         'labels' => array(
@@ -88,7 +88,7 @@ function add_custom_post_type() {
         "supports" => array("title", "editor", "thumbnail"),
         'menu_position' => 22,
     );
-    register_post_type('develop_episode', $developEpisodeParams);
+    register_post_type('develop', $developEpisodeParams);
 
     $chitchatParams = array(
         'labels' => array(

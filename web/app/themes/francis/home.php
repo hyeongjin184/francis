@@ -41,11 +41,11 @@ get_header(); ?>
                 wp_reset_postdata(); ?>
             </section>
             <hr>
-            <section class="japan-episode">
+            <section class="japan">
                 <h2>일본이야기</h2>
                 <?php
                 $japanEpisodeObject = new WP_Query(array(
-                    'post_type' => 'japan_episode', // 커스텀 게시판 이름
+                    'post_type' => 'japan', // 커스텀 게시판 이름
                     'posts_per_page' => -1, // 표시수 (-1: 전부)
                     'order' => 'DESC', // 표시순서 (내림차순)
                     'orderby' => 'date', // 표시순서 기준 (날짜)
@@ -80,11 +80,11 @@ get_header(); ?>
                 wp_reset_postdata(); ?>
             </section>
             <hr>
-            <section class="develop-episode">
+            <section class="develop">
                 <h2>개발이야기</h2>
                 <?php
                 $developEpisodeObject = new WP_Query(array(
-                    'post_type' => 'japan_episode', // 커스텀 게시판 이름
+                    'post_type' => 'develop', // 커스텀 게시판 이름
                     'posts_per_page' => -1, // 표시수 (-1: 전부)
                     'order' => 'DESC', // 표시순서 (내림차순)
                     'orderby' => 'date', // 표시순서 기준 (날짜)
