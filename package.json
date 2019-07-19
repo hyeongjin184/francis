@@ -1,0 +1,43 @@
+{
+  "name": "francis",
+  "version": "1.0.0",
+  "description": "[![Packagist](https://img.shields.io/packagist/v/roots/bedrock.svg?style=flat-square)](https://packagist.org/packages/roots/bedrock) [![Build Status](https://img.shields.io/travis/roots/bedrock.svg?style=flat-square)](https://travis-ci.org/roots/bedrock)",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:hyeongjin184/francis.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://github.com/hyeongjin184/francis",
+  "dependencies": {
+    "@babel/core": "^7",
+    "@babel/preset-env": "^7",
+    "@glidejs/glide": "^3",
+    "autoprefixer": "^9",
+    "babel-loader": "^8",
+    "css-loader": "^1",
+    "jquery": "^3.3.1",
+    "lottie-web": "^5",
+    "mini-css-extract-plugin": "^0.4.5",
+    "node-sass": "^4",
+    "postcss-loader": "^3",
+    "sass-loader": "^7",
+    "slick-carousel": "^1.8.1",
+    "stickyfilljs": "^2.1.0",
+    "webpack": "^4",
+    "webpack-cli": "^3"
+  },
+  "config": {
+    "webpack_config_path": "./webpack.config.js"
+  },
+  "scripts": {
+    "build:base": "npm install",
+    "build": "npm run webpack",
+    "build:staging": "npm run webpack:staging",
+    "build:production": "npm run webpack:production",
+    "webpack": "webpack --mode development --config $npm_package_config_webpack_config_path",
+    "webpack:staging": "webpack --mode production --config $npm_package_config_webpack_config_path",
+    "webpack:production": "webpack --mode production --config $npm_package_config_webpack_config_path"
+  }
+}
