@@ -2,6 +2,7 @@
 add_action('wp_enqueue_scripts', 'enqueue_styles_and_scripts');
 function enqueue_styles_and_scripts() {
     wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
+    wp_enqueue_style('style', get_stylesheet_directory_uri() . '/dist/css/style.css');
 }
 
 add_action('init', 'add_custom_post_type');
@@ -60,7 +61,7 @@ function add_custom_post_type() {
         "supports" => array("title", "editor", "thumbnail"),
         'menu_position' => 21,
     );
-    register_post_type('japan_episode', $japanEpisodeParams);
+    register_post_type('japan', $japanEpisodeParams);
 
     $developEpisodeParams = array(
         'labels' => array(
@@ -88,7 +89,7 @@ function add_custom_post_type() {
         "supports" => array("title", "editor", "thumbnail"),
         'menu_position' => 22,
     );
-    register_post_type('develop_episode', $developEpisodeParams);
+    register_post_type('develop', $developEpisodeParams);
 
     $chitchatParams = array(
         'labels' => array(
@@ -118,3 +119,74 @@ function add_custom_post_type() {
     );
     register_post_type('chitchat', $chitchatParams);
 }
+
+function menu_setup()
+{
+    register_nav_menus(array(
+        'global' => 'Global Menu',
+    ));
+}
+
+add_action('after_setup_theme', 'menu_setup');
+
+
+
+/**
+ * 각 포트스에 택소노미 추가 (태그)
+ */
+register_taxonomy(
+    'japan-tag',
+    'japan',
+    array(
+        'hierarchical' => false,
+        'label' => '일본이야기 태그',
+        'singular_label' => '일본이야기 태그',
+        'public' => true,
+        'query_var' => true,
+        'has_archive' => false,
+        'rewrite' => true,
+        'show_ui' => true,
+        'labels' => array(
+            'add_new_item' => '일본이야기 태그를 추가',
+            'search_items' => '일본이야기 태그를 검색',
+        )
+    )
+);
+
+register_taxonomy(
+    'develop-tag',
+    'develop',
+    array(
+        'hierarchical' => false,
+        'label' => '개발이야기 태그',
+        'singular_label' => '개발이야기 태그',
+        'public' => true,
+        'query_var' => true,
+        'has_archive' => false,
+        'rewrite' => true,
+        'show_ui' => true,
+        'labels' => array(
+            'add_new_item' => '개발이야기 태그를 추가',
+            'search_items' => '개발이야기 태그를 검색',
+        )
+    )
+);
+
+register_taxonomy(
+    'chitchat-tag',
+    'chitchat',
+    array(
+        'hierarchical' => false,
+        'label' => '잡담 태그',
+        'singular_label' => '잡담 태그',
+        'public' => true,
+        'query_var' => true,
+        'has_archive' => false,
+        'rewrite' => true,
+        'show_ui' => true,
+        'labels' => array(
+            'add_new_item' => '잡담 태그를 추가',
+            'search_items' => '잡담 태그를 검색',
+        )
+    )
+);
