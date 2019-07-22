@@ -38,6 +38,15 @@ get_header(); ?>
                                                     <img src="<?= $japanEpisodeImageUrl; ?>" alt="<?php the_title(); ?>">
                                                 </div>
                                                 <p class="ariticle-content"><?= wp_trim_words(get_the_content(), 30, '⋯'); ?></p>
+                                                <ul class="article-tags-container">
+                                                <?php
+                                                $articleTags = get_the_terms($japanEpisodeObject->ID, 'japan-tag');
+                                                if ($articleTags) {
+                                                    foreach ($articleTags as $tag) {
+                                                        echo '<li class="article-tags-container__article-tag"><p>#' . esc_html($tag->name) . '</p></li>';
+                                                    }
+                                                } ?>
+                                                </ul>
                                             </a>
                                         </li>
                                     <?php
@@ -88,6 +97,16 @@ get_header(); ?>
                                                 <div class="image-container">
                                                     <img src="<?= $developEpisodeImageUrl; ?>" alt="<?php the_title(); ?>">
                                                 </div>
+                                                <p class="ariticle-content"><?= wp_trim_words(get_the_content(), 30, '⋯'); ?></p>
+                                                <ul class="article-tags-container">
+                                                <?php
+                                                $articleTags = get_the_terms($japanEpisodeObject->ID, 'develop-tag');
+                                                if ($articleTags) {
+                                                    foreach ($articleTags as $tag) {
+                                                        echo '<li class="article-tags-container__article-tag"><p>#' . esc_html($tag->name) . '</p></li>';
+                                                    }
+                                                } ?>
+                                                </ul>
                                             </a>
                                         </li>
                                     <?php
@@ -138,6 +157,16 @@ get_header(); ?>
                                                 <div class="image-container">
                                                     <img src="<?= $chitchatImageUrl; ?>" alt="<?php the_title(); ?>">
                                                 </div>
+                                                <p class="ariticle-content"><?= wp_trim_words(get_the_content(), 30, '⋯'); ?></p>
+                                                <ul class="article-tags-container">
+                                                <?php
+                                                $articleTags = get_the_terms($japanEpisodeObject->ID, 'chitchat-tag');
+                                                if ($articleTags) {
+                                                    foreach ($articleTags as $tag) {
+                                                        echo '<li class="article-tags-container__article-tag"><p>#' . esc_html($tag->name) . '</p></li>';
+                                                    }
+                                                } ?>
+                                                </ul>
                                             </a>
                                         </li>
                                     <?php

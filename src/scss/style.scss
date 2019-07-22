@@ -2,6 +2,10 @@
 
 
 header {
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    background-color: #ffffff;
     border-bottom: 1px solid #e3e3e3;
 
 }
@@ -28,6 +32,7 @@ header {
     width: calc(100% - 200px);
     max-width: 1080px;
     margin: 0 auto;
+    padding-top: 71px;
 
     @include sp-screen {
         width: calc(100% - 32px);
@@ -120,6 +125,26 @@ header {
         .ariticle-content {
             font-size: 16px;
             margin-bottom: 0;
+        }
+
+        .article-tags-container {
+            list-style: none;
+            margin-top: 20px;
+            margin-bottom: 0;
+            display: flex;
+
+            &__article-tag {
+                background-color: #00bbb5;
+                border-radius: 10px;
+                padding: 2px 10px;
+                margin-right: 6px;
+
+                p {
+                    font-size: 15px;
+                    color: #ffffff;
+                    margin-bottom: 0;
+                }
+            }
         }
     }
 }
