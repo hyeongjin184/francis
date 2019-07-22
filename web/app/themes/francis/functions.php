@@ -5,6 +5,15 @@ function enqueue_styles_and_scripts() {
     wp_enqueue_style('style', get_stylesheet_directory_uri() . '/dist/css/style.css');
 }
 
+
+
+function add_thumbnail_size() {
+    add_image_size( 'article_thumb', 680, 465, true);
+}
+add_action( 'after_setup_theme', 'add_thumbnail_size' );
+
+
+
 add_action('init', 'add_custom_post_type');
 function add_custom_post_type() {
     $portfolioParams = array(
