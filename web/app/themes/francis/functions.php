@@ -9,6 +9,7 @@ function enqueue_styles_and_scripts() {
 
 function add_thumbnail_size() {
     add_image_size( 'article_thumb', 680, 465, true);
+    add_image_size( 'travel_thumb', 340, 340, true);
 }
 add_action( 'after_setup_theme', 'add_thumbnail_size' );
 
@@ -16,20 +17,20 @@ add_action( 'after_setup_theme', 'add_thumbnail_size' );
 
 add_action('init', 'add_custom_post_type');
 function add_custom_post_type() {
-    $portfolioParams = array(
+    $travelParams = array(
         'labels' => array(
-            'name' => '포트폴리오',
-            'singular_name' => '포트폴리오',
-            'add_new' => '포트폴리오 추가',
-            'add_new_item' => '신규 포트폴리오 추가',
+            'name' => '여행이야기',
+            'singular_name' => '여행이야기',
+            'add_new' => '여행이야기 추가',
+            'add_new_item' => '신규 여행이야기 추가',
             'edit_item' => '편집',
-            'new_item' => '신규 포트폴리오',
-            'all_items' => '전체 포트폴리오',
-            'view_item' => '포트폴리오 보기',
-            'search_items' => '포트폴리오 찾기',
+            'new_item' => '신규 여행이야기',
+            'all_items' => '전체 여행이야기',
+            'view_item' => '여행이야기 보기',
+            'search_items' => '여행이야기 찾기',
             'not_found' => '찾을 수 없습니다',
             'not_found_in_trash' => '휴지통 안에 없습니다',
-            'enter_title_here' => '포트폴리오 제목을 입력',
+            'enter_title_here' => '여행이야기 제목을 입력',
         ),
         'public' => true,
         'publicly_queryable' => true,
@@ -42,7 +43,7 @@ function add_custom_post_type() {
         "supports" => array("title", "editor", "thumbnail"),
         'menu_position' => 20,
     );
-    register_post_type('portfolio', $portfolioParams);
+    register_post_type('travel', $travelParams);
 
     $japanEpisodeParams = array(
         'labels' => array(

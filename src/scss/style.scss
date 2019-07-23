@@ -1,6 +1,12 @@
 @import 'breakpoints';
 
 
+
+body * {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+
 header {
     position: fixed;
     width: 100%;
@@ -149,23 +155,72 @@ header {
     }
 }
 
-.portfolio-list {
+.travel {
+    padding-bottom: 60px;
+    margin-bottom: 60px;
+    border-bottom: 1px dashed #e0e0e0;
+
+    .travel-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        list-style: none;
+    
+        &__item {
+            width: 50%;
+            height: 0;
+            padding-bottom: 50%;
+    
+            @include sp-screen {
+                width: 100%;
+                height: 100%;
+                padding-bottom: 0;
+            }
+    
+            .travel-image-container {
+                position: relative;
+    
+                img {
+                    width: 100%;
+                }
+    
+                .title-container {
+                    top: 50%;
+                    left: 50%;
+                    position: absolute;
+                    transform: translate(-50%, -50%);
+    
+                    h3 {
+                        font-size: 24px;
+                        font-weight: 400;
+                        color: #ffffff;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+.chitchat-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    list-style: none;
 
     &__item {
-        width: 50%;
+        width: calc(50% - 12px);
+        box-shadow: 3px 3px 5px #e3e9e5;
+        padding: 12px;
 
         @include sp-screen {
             width: 100%;
         }
 
-        .portfolio-image-container {
-            img {
-                width: 100%;
-            }
+        .image-container {
+            margin-top: 0;
+            margin-bottom: 0;
         }
     }
 }
@@ -177,7 +232,7 @@ header {
     justify-content: center;
     padding-bottom: 60px;
     margin-bottom: 60px;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px dashed #e0e0e0;
 
     a {
         border-left: 2px solid #808080;

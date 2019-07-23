@@ -1,3 +1,6 @@
+body * {
+  font-family: 'Noto Sans KR', sans-serif; }
+
 header {
   position: fixed;
   width: 100%;
@@ -101,21 +104,59 @@ header {
           color: #ffffff;
           margin-bottom: 0; }
 
-.portfolio-list {
+.travel {
+  padding-bottom: 60px;
+  margin-bottom: 60px;
+  border-bottom: 1px dashed #e0e0e0; }
+  .travel .travel-list {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    list-style: none; }
+    .travel .travel-list__item {
+      width: 50%;
+      height: 0;
+      padding-bottom: 50%; }
+      @media (max-width: 767px) {
+        .travel .travel-list__item {
+          width: 100%;
+          height: 100%;
+          padding-bottom: 0; } }
+      .travel .travel-list__item .travel-image-container {
+        position: relative; }
+        .travel .travel-list__item .travel-image-container img {
+          width: 100%; }
+        .travel .travel-list__item .travel-image-container .title-container {
+          top: 50%;
+          left: 50%;
+          position: absolute;
+          transform: translate(-50%, -50%); }
+          .travel .travel-list__item .travel-image-container .title-container h3 {
+            font-size: 24px;
+            font-weight: 400;
+            color: #ffffff;
+            margin: 0; }
+
+.chitchat-list {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -ms-flex-pack: justify;
-      justify-content: space-between;
-  list-style: none; }
-  .portfolio-list__item {
-    width: 50%; }
+      justify-content: space-between; }
+  .chitchat-list__item {
+    width: calc(50% - 12px);
+    box-shadow: 3px 3px 5px #e3e9e5;
+    padding: 12px; }
     @media (max-width: 767px) {
-      .portfolio-list__item {
+      .chitchat-list__item {
         width: 100%; } }
-    .portfolio-list__item .portfolio-image-container img {
-      width: 100%; }
+    .chitchat-list__item .image-container {
+      margin-top: 0;
+      margin-bottom: 0; }
 
 .link-to-archive {
   display: -ms-flexbox;
@@ -126,7 +167,7 @@ header {
       justify-content: center;
   padding-bottom: 60px;
   margin-bottom: 60px;
-  border-bottom: 1px solid #e0e0e0; }
+  border-bottom: 1px dashed #e0e0e0; }
   .link-to-archive a {
     border-left: 2px solid #808080;
     border-right: 2px solid #808080;

@@ -124,19 +124,64 @@ get_header(); ?>
                             </a>
                         </div>
                     </section>
-                    
+
+                    <section class="travel">
+                        <h2 class="article-title">여행이야기</h2>
+                        <div>
+                            <?php
+                            $travelObject = new WP_Query(array(
+                                'post_type' => 'travel', // 커스텀 게시판 이름
+                                'posts_per_page' => -1, // 표시수 (-1: 전부)
+                                'order' => 'DESC', // 표시순서 (내림차순)
+                                'orderby' => 'date', // 표시순서 기준 (날짜)
+                            ));
+                            if ($travelObject->have_posts()): ?>
+                                <ul class="travel-list">
+                                    <?php
+                                    while ($travelObject->have_posts()):$travelObject->the_post();
+                                        $travelImageUrl = "";
+                                        if (has_post_thumbnail()) {
+                                            // 아이캐치 이미지가 있을 경우
+                                            $travelImageUrl = wp_get_attachment_image_src(get_post_thumbnail_id($travelObject->ID), 'travel_thumb')[0];
+                                        } else {
+                                            // 아이캐치 이미지가 없을 경우
+                                            $travelImageUrl = get_stylesheet_directory_uri() . "/image/dummy-image/news_thumb_noimage.jpg";
+                                        }
+                                        ?>
+
+                                        <li class="travel-list__item">
+                                            <a href="<?php the_permalink(); ?>">
+                                                <div class="travel-image-container">
+                                                    <img src="<?= $travelImageUrl; ?>" alt="<?php the_title(); ?>">
+                                                    <div class="title-container">
+                                                        <h3 class="title"><?php the_title(); ?></h3>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    <?php
+                                    endwhile;
+                                    ?>
+                                </ul>
+                            <?php
+                            endif;
+                            wp_reset_postdata();
+                            ?>
+                        </div>
+                    </section>
+
                     <section class="chitchat">
                         <h2 class="article-title">잡담</h2>
                         <div>
                             <?php
                             $chitchatObject = new WP_Query(array(
                                 'post_type' => 'chitchat', // 커스텀 게시판 이름
-                                'posts_per_page' => 2, // 표시수 (-1: 전부)
+                                'posts_per_page' => 4, // 표시수 (-1: 전부)
                                 'order' => 'DESC', // 표시순서 (내림차순)
                                 'orderby' => 'date', // 표시순서 기준 (날짜)
                             ));
                             if ($chitchatObject->have_posts()): ?>
-                                <ul class="article-list">
+                                <ul class="article-list chitchat-list">
                                     <?php
                                     while ($chitchatObject->have_posts()):$chitchatObject->the_post();
                                         $chitchatImageUrl = "";
@@ -148,14 +193,14 @@ get_header(); ?>
                                             $chitchatImageUrl = get_stylesheet_directory_uri() . "/image/dummy-image/news_thumb_noimage.jpg";
                                         }
                                         ?>
-                                        <li class="article-list__item">
+                                        <li class="article-list__item chitchat-list__item">
                                             <a href="<?php the_permalink(); ?>">
+                                                <div class="image-container">
+                                                    <img src="<?= $chitchatImageUrl; ?>" alt="<?php the_title(); ?>">
+                                                </div>
                                                 <div class="date-and-title">
                                                     <h3 class="title"><?php the_title(); ?></h3>
                                                     <time class="date">Posted on <?php the_time('Y.n.j'); ?></time>
-                                                </div>
-                                                <div class="image-container">
-                                                    <img src="<?= $chitchatImageUrl; ?>" alt="<?php the_title(); ?>">
                                                 </div>
                                                 <p class="ariticle-content"><?= wp_trim_words(get_the_content(), 30, '⋯'); ?></p>
                                                 <ul class="article-tags-container">
@@ -185,50 +230,6 @@ get_header(); ?>
                         </div>
                     </section>
                     
-                    <section class="portfolio">
-                        <h2 class="article-title">포트폴리오</h2>
-                        <div>
-                            <?php
-                            $portfolioObject = new WP_Query(array(
-                                'post_type' => 'portfolio', // 커스텀 게시판 이름
-                                'posts_per_page' => -1, // 표시수 (-1: 전부)
-                                'order' => 'DESC', // 표시순서 (내림차순)
-                                'orderby' => 'date', // 표시순서 기준 (날짜)
-                            ));
-                            if ($portfolioObject->have_posts()): ?>
-                                <ul class="portfolio-list">
-                                    <?php
-                                    while ($portfolioObject->have_posts()):$portfolioObject->the_post();
-                                        $portfolioImageUrl = "";
-                                        if (has_post_thumbnail()) {
-                                            // 아이캐치 이미지가 있을 경우
-                                            $portfolioImageUrl = wp_get_attachment_image_src(get_post_thumbnail_id($portfolioObject->ID), 'large')[0];
-                                        } else {
-                                            // 아이캐치 이미지가 없을 경우
-                                            $portfolioImageUrl = get_stylesheet_directory_uri() . "/image/dummy-image/news_thumb_noimage.jpg";
-                                        }
-                                        ?>
-
-                                        <li class="portfolio-list__item">
-                                            <a href="<?php the_permalink(); ?>">
-                                                <div class="portfolio-image-container">
-                                                    <img src="<?= $portfolioImageUrl; ?>" alt="<?php the_title(); ?>">
-                                                </div>
-                                                <div class="date-and-title">
-                                                    <h3 class="title"><?php the_title(); ?></h3>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    <?php
-                                    endwhile;
-                                    ?>
-                                </ul>
-                            <?php
-                            endif;
-                            wp_reset_postdata();
-                            ?>
-                        </div>
-                    </section>
                 </div>
                 <aside class="main-container__right">
                     <h2>ABOUT ME</h2>
