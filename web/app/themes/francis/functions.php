@@ -10,6 +10,7 @@ function enqueue_styles_and_scripts() {
 function add_thumbnail_size() {
     add_image_size( 'article_thumb', 680, 465, true);
     add_image_size( 'travel_thumb', 340, 340, true);
+    add_image_size( 'chitchat_thumb', 330, 185, true);
 }
 add_action( 'after_setup_theme', 'add_thumbnail_size' );
 

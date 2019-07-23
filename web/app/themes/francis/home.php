@@ -10,7 +10,7 @@ get_header(); ?>
                             <?php
                             $japanEpisodeObject = new WP_Query(array(
                                 'post_type' => 'japan', // 커스텀 게시판 이름
-                                'posts_per_page' => 2, // 표시수 (-1: 전부)
+                                'posts_per_page' => 5, // 표시수 (-1: 전부)
                                 'order' => 'DESC', // 표시순서 (내림차순)
                                 'orderby' => 'date', // 표시순서 기준 (날짜)
                             ));
@@ -71,7 +71,7 @@ get_header(); ?>
                             <?php
                             $developEpisodeObject = new WP_Query(array(
                                 'post_type' => 'develop', // 커스텀 게시판 이름
-                                'posts_per_page' => 2, // 표시수 (-1: 전부)
+                                'posts_per_page' => 5, // 표시수 (-1: 전부)
                                 'order' => 'DESC', // 표시순서 (내림차순)
                                 'orderby' => 'date', // 표시순서 기준 (날짜)
                             ));
@@ -187,7 +187,7 @@ get_header(); ?>
                                         $chitchatImageUrl = "";
                                         if (has_post_thumbnail()) {
                                             // 아이캐치 이미지가 있을 경우
-                                            $chitchatImageUrl = wp_get_attachment_image_src(get_post_thumbnail_id($chitchatObject->ID), 'article_thumb')[0];
+                                            $chitchatImageUrl = wp_get_attachment_image_src(get_post_thumbnail_id($chitchatObject->ID), 'chitchat_thumb')[0];
                                         } else {
                                             // 아이캐치 이미지가 없을 경우
                                             $chitchatImageUrl = get_stylesheet_directory_uri() . "/image/dummy-image/news_thumb_noimage.jpg";
@@ -198,20 +198,22 @@ get_header(); ?>
                                                 <div class="image-container">
                                                     <img src="<?= $chitchatImageUrl; ?>" alt="<?php the_title(); ?>">
                                                 </div>
-                                                <div class="date-and-title">
-                                                    <h3 class="title"><?php the_title(); ?></h3>
-                                                    <time class="date">Posted on <?php the_time('Y.n.j'); ?></time>
+                                                <div class="chichat-info">
+                                                    <div class="date-and-title">
+                                                        <h3 class="title"><?= wp_trim_words(get_the_title(), 7, '⋯'); ?></h3>
+                                                        <time class="date">Posted on <?php the_time('Y.n.j'); ?></time>
+                                                    </div>
+                                                    <p class="ariticle-content"><?= wp_trim_words(get_the_content(), 13, '⋯'); ?></p>
+                                                    <ul class="article-tags-container">
+                                                    <?php
+                                                    $articleTags = get_the_terms($japanEpisodeObject->ID, 'chitchat-tag');
+                                                    if ($articleTags) {
+                                                        foreach ($articleTags as $tag) {
+                                                            echo '<li class="article-tags-container__article-tag"><p>#' . esc_html($tag->name) . '</p></li>';
+                                                        }
+                                                    } ?>
+                                                    </ul>
                                                 </div>
-                                                <p class="ariticle-content"><?= wp_trim_words(get_the_content(), 30, '⋯'); ?></p>
-                                                <ul class="article-tags-container">
-                                                <?php
-                                                $articleTags = get_the_terms($japanEpisodeObject->ID, 'chitchat-tag');
-                                                if ($articleTags) {
-                                                    foreach ($articleTags as $tag) {
-                                                        echo '<li class="article-tags-container__article-tag"><p>#' . esc_html($tag->name) . '</p></li>';
-                                                    }
-                                                } ?>
-                                                </ul>
                                             </a>
                                         </li>
                                     <?php

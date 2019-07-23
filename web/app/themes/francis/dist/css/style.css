@@ -93,16 +93,21 @@ header {
       margin-top: 20px;
       margin-bottom: 0;
       display: -ms-flexbox;
-      display: flex; }
+      display: flex;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
       .article-list__item .article-tags-container__article-tag {
         background-color: #00bbb5;
-        border-radius: 10px;
+        border-radius: 15px;
         padding: 2px 10px;
         margin-right: 6px; }
         .article-list__item .article-tags-container__article-tag p {
           font-size: 15px;
           color: #ffffff;
           margin-bottom: 0; }
+          @media (max-width: 767px) {
+            .article-list__item .article-tags-container__article-tag p {
+              font-size: 12px; } }
 
 .travel {
   padding-bottom: 60px;
@@ -150,13 +155,29 @@ header {
   .chitchat-list__item {
     width: calc(50% - 12px);
     box-shadow: 3px 3px 5px #e3e9e5;
-    padding: 12px; }
+    margin-bottom: 24px; }
     @media (max-width: 767px) {
       .chitchat-list__item {
         width: 100%; } }
     .chitchat-list__item .image-container {
       margin-top: 0;
       margin-bottom: 0; }
+    .chitchat-list__item .chichat-info {
+      padding: 12px;
+      overflow: hidden; }
+      .chitchat-list__item .chichat-info .date-and-title {
+        padding-bottom: 10px; }
+        .chitchat-list__item .chichat-info .date-and-title .title {
+          font-size: 16px; }
+        .chitchat-list__item .chichat-info .date-and-title .date {
+          font-size: 11px; }
+      .chitchat-list__item .chichat-info .ariticle-content {
+        font-size: 14px;
+        padding-bottom: 10px; }
+      .chitchat-list__item .chichat-info .article-tags-container {
+        margin-top: 0; }
+        .chitchat-list__item .chichat-info .article-tags-container__article-tag p {
+          font-size: 12px; }
 
 .link-to-archive {
   display: -ms-flexbox;
@@ -168,6 +189,10 @@ header {
   padding-bottom: 60px;
   margin-bottom: 60px;
   border-bottom: 1px dashed #e0e0e0; }
+  @media (max-width: 767px) {
+    .link-to-archive {
+      padding-bottom: 30px;
+      margin-bottom: 30px; } }
   .link-to-archive a {
     border-left: 2px solid #808080;
     border-right: 2px solid #808080;

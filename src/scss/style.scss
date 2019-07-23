@@ -138,10 +138,11 @@ header {
             margin-top: 20px;
             margin-bottom: 0;
             display: flex;
+            flex-wrap: wrap;
 
             &__article-tag {
                 background-color: #00bbb5;
-                border-radius: 10px;
+                border-radius: 15px;
                 padding: 2px 10px;
                 margin-right: 6px;
 
@@ -149,6 +150,10 @@ header {
                     font-size: 15px;
                     color: #ffffff;
                     margin-bottom: 0;
+
+                    @include sp-screen {
+                        font-size: 12px;
+                    }
                 }
             }
         }
@@ -212,7 +217,7 @@ header {
     &__item {
         width: calc(50% - 12px);
         box-shadow: 3px 3px 5px #e3e9e5;
-        padding: 12px;
+        margin-bottom: 24px;
 
         @include sp-screen {
             width: 100%;
@@ -221,6 +226,37 @@ header {
         .image-container {
             margin-top: 0;
             margin-bottom: 0;
+        }
+
+        .chichat-info {
+            padding: 12px;
+            overflow: hidden;
+
+            .date-and-title {
+                padding-bottom: 10px;
+
+                .title {
+                    font-size: 16px;
+                }
+                .date {
+                    font-size: 11px;
+                }
+            }
+
+            .ariticle-content {
+                font-size: 14px;
+                padding-bottom: 10px;
+            }
+
+            .article-tags-container {
+                margin-top: 0;
+
+                &__article-tag {
+                    p {
+                        font-size: 12px;
+                    }
+                }
+            }
         }
     }
 }
@@ -233,6 +269,11 @@ header {
     padding-bottom: 60px;
     margin-bottom: 60px;
     border-bottom: 1px dashed #e0e0e0;
+
+    @include sp-screen {
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+    }
 
     a {
         border-left: 2px solid #808080;
