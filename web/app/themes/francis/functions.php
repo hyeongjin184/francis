@@ -3,6 +3,10 @@ add_action('wp_enqueue_scripts', 'enqueue_styles_and_scripts');
 function enqueue_styles_and_scripts() {
     wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
     wp_enqueue_style('style', get_stylesheet_directory_uri() . '/dist/css/style.css');
+
+    if (is_front_page()) {
+        wp_enqueue_script('keyvisual_slider', get_stylesheet_directory_uri() . '/dist/js/keyvisual_slider.js', array(), false, true);
+    }
 }
 
 

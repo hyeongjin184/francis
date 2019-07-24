@@ -7,6 +7,9 @@ module.exports = {
     style: [
       './src/scss/style.scss'
     ],
+    keyvisual_slider: [
+      './src/js/keyvisual_slider.js'
+    ],
   },
   output: {
     path: path.join(__dirname, 'web/app/themes/francis/dist'),

@@ -24,24 +24,76 @@ header {
   #global-menu-list li {
     margin-right: 15px; }
 
+/* Top Page Key Visual */
+@keyframes LeftToRight-Title {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes LeftToRight-Image {
+  0% {
+    transform: translateX(-100px); }
+  100% {
+    transform: translateX(0); } }
+
+@keyframes LeftToRight-Image-SP {
+  0% {
+    transform: translateX(-50px); }
+  100% {
+    transform: translateX(0); } }
+
 #main {
   padding-top: 71px; }
   #main .key-visual {
     width: 100%;
     height: 580px;
     margin-bottom: 60px; }
+    @media (max-width: 767px) {
+      #main .key-visual {
+        height: 100vh; } }
     #main .key-visual__container .key-visual__slider {
       margin: 0;
       position: relative;
       overflow: hidden;
       width: 100%;
       height: 100%; }
-      #main .key-visual__container .key-visual__slider__image-container .image-pc {
+      #main .key-visual__container .key-visual__slider__image-container {
+        position: relative;
         width: 100%;
         height: 100%;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover; }
+        opacity: 0;
+        transition: opacity 2s linear, transform 7.5s linear;
+        z-index: 1; }
+        #main .key-visual__container .key-visual__slider__image-container:not(:first-child) {
+          position: absolute;
+          top: 0;
+          left: 0; }
+        #main .key-visual__container .key-visual__slider__image-container.Show_ {
+          opacity: 1; }
+        #main .key-visual__container .key-visual__slider__image-container.LeftToRight_ {
+          animation-duration: 20s;
+          animation-name: LeftToRight-Image; }
+          @media (max-width: 767px) {
+            #main .key-visual__container .key-visual__slider__image-container.LeftToRight_ {
+              animation-name: LeftToRight-Image-SP; } }
+        #main .key-visual__container .key-visual__slider__image-container .image-pc {
+          width: 100%;
+          height: 100%;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          transform: scale(1.3); }
+        #main .key-visual__container .key-visual__slider__image-container .image-sp {
+          display: none;
+          width: 100%;
+          height: 100%;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          transform: scale(1.3); }
   #main .main-container {
     width: calc(100% - 200px);
     max-width: 1080px;
