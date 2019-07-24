@@ -3,27 +3,25 @@ get_header(); ?>
     <div id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
             <div class="main-container">
-               <div class="archive-page-main archive-japan">
-                    <h2>일본이야기 리스트</h2>
-                    
-                    <?php
-                    $currentSelectedTagName = '전체';
-                    $currentSelectedTagSlug = get_query_var('japan-tag');
-                    if (!empty($currentSelectedTagSlug)) {
-                        $currentSelectedTagName = '#' . get_term_by('slug', $currentSelectedTagSlug, 'japan-tag')->name;
-                    }
-                    ?>
-                    <div>
-                        <p>
-                            선택中 태그 → <span><?= $currentSelectedTagName; ?></span>
-                        </p>
-                    </div>
-                    
-                    <div class="list-and-tags">
-                        <div>
+               <div class="archive-main archive-japan">    
+                    <div class="archive-list-and-tags">
+                        <div class="archive-list-and-tags__list-container">
+                            <?php
+                            $currentSelectedTagName = '#전체';
+                            $currentSelectedTagSlug = get_query_var('japan-tag');
+                            if (!empty($currentSelectedTagSlug)) {
+                                $currentSelectedTagName = '#' . get_term_by('slug', $currentSelectedTagSlug, 'japan-tag')->name;
+                            }
+                            ?>
+                            <div class="title-and-seleted-tag">
+                                <div class="title-and-seleted-tag__title-container">
+                                    <h1 class="title">일본이야기</h1>
+                                </div>
+                                <h2 class="title-and-seleted-tag__selected-tag"><?= $currentSelectedTagName; ?></h2>
+                            </div>
                             <?php
                             if (have_posts()): ?>
-                                <ul>
+                                <ul class="archive-list-and-tags__list-container__list">
                                     <?php
                                     while (have_posts()):the_post();
                                         $japanEpisodeImageUrl = "";
@@ -55,16 +53,16 @@ get_header(); ?>
                             wp_reset_postdata();
                             ?>
                         </div>
-                        <div class="tags">
-                            <ul class="tags-container">
+                        <div class="archive-list-and-tags__tags-container">
+                            <ul class="archive-list-and-tags__tags-container__tags">
                                 <?php
                                 $isTheTagSelected = '';
                                 if (empty($currentSelectedTagSlug)) {
                                     $isTheTagSelected = 'current-selected-tag';
                                 } ?>
-                                <li class="tags-container__list <?= $isTheTagSelected; ?>">
-                                    <a href="<?= get_post_type_archive_link('japan'); ?>" class="tags-container__list__link">
-                                        <p>전체</p>
+                                <li class="tag-list <?= $isTheTagSelected; ?>">
+                                    <a href="<?= get_post_type_archive_link('japan'); ?>" class="tag-list__link">
+                                        <p>#전체</p>
                                     </a>
                                 </li>
                                 <?php
@@ -77,8 +75,8 @@ get_header(); ?>
                                             $isTheTagSelected = 'current-selected-tag';
                                         }
                                         ?>
-                                        <li class="tags-container__list <?= $isTheTagSelected; ?>">
-                                            <a href="<?= $linkToTagLimitedArchiveJapan ?>" class="tags-container__list__link">
+                                        <li class="tag-list <?= $isTheTagSelected; ?>">
+                                            <a href="<?= $linkToTagLimitedArchiveJapan ?>" class="tag-list__link">
                                                 <p>#<?= $tag->name ?></p>
                                             </a>
                                         </li>
