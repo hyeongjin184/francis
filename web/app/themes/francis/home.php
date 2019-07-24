@@ -2,6 +2,33 @@
 get_header(); ?>
     <div id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
+            <div class="key-visual">
+                <?php
+                $keyVisualObject = new WP_Query(array(
+                    'post_type' => 'slider', // カスタム投稿名
+                    'posts_per_page' => -1, // 表示件数
+                    'order' => 'ASC',
+                    'orderby' => 'menu_order' // 管理画面の並び順
+                ));
+                if ($keyVisualObject->have_posts()): ?>
+                    <div class="key-visual__container">
+                        <div id="slider-wrap" class="key-visual__slider">
+                            <?php while ($keyVisualObject->have_posts()):$keyVisualObject->the_post();
+                                $keyVisualUrlPc = get_field('image_pc');
+                                $keyVisualUrlSp = get_field('image_sp');
+                                ?>
+                                <div class="key-visual__slider__image-container slider-item">
+                                    <div class="image-pc"
+                                         style="background-image: url('<?php echo $keyVisualUrlPc; ?>')"></div>
+                                    <div class="image-sp"
+                                         style="background-image: url('<?php echo $keyVisualUrlSp; ?>')"></div>
+                                </div>
+                            <?php endwhile; ?>
+                        </div>
+                    </div>
+                <?php endif;
+                wp_reset_postdata(); ?>
+            </div>
             <div class="main-container">
                 <div class="main-container__left">
                     <section class="japan">
