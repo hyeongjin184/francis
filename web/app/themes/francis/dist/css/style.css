@@ -194,12 +194,29 @@ header {
       padding-bottom: 30px;
       margin-bottom: 30px; } }
   .link-to-archive a {
-    border-left: 2px solid #808080;
-    border-right: 2px solid #808080;
-    padding: 0 20px;
-    font-size: 17px;
-    font-weight: 600;
-    color: #808080; }
+    display: -ms-flexbox;
+    display: flex;
+    border: 2px solid #808080;
+    border-radius: 10px; }
+    .link-to-archive a .text {
+      padding: 4px 0 4px 15px;
+      font-size: 14px;
+      color: #808080; }
+    .link-to-archive a .arrow {
+      display: block;
+      width: 29px;
+      height: 29px;
+      position: relative; }
+      .link-to-archive a .arrow:before {
+        content: '';
+        top: 10px;
+        left: 5px;
+        position: absolute;
+        border: solid #808080;
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 4px;
+        transform: rotate(-45deg); }
 
 footer {
   background-color: #e3e3e3;

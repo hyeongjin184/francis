@@ -60,7 +60,8 @@ get_header(); ?>
                         </div>
                         <div class="link-to-archive">
                             <a class="link-to-archive-btn" href="<?= get_post_type_archive_link('japan'); ?>">
-                                VIEW ALL
+                                <span class="text">VIEW ALL</span>
+                                <span class="arrow"></span>
                             </a>
                         </div>
                     </section>
@@ -120,7 +121,8 @@ get_header(); ?>
                         </div>
                         <div class="link-to-archive">
                             <a class="link-to-archive-btn" href="<?= get_post_type_archive_link('develop'); ?>">
-                                VIEW ALL
+                                <span class="text">VIEW ALL</span>
+                                <span class="arrow"></span>
                             </a>
                         </div>
                     </section>
@@ -227,7 +229,8 @@ get_header(); ?>
                         </div>
                         <div class="link-to-archive">
                             <a class="link-to-archive-btn" href="<?= get_post_type_archive_link('chitchat'); ?>">
-                                VIEW ALL
+                                <span class="text">VIEW ALL</span>
+                                <span class="arrow"></span>
                             </a>
                         </div>
                     </section>
