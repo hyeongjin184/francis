@@ -18,6 +18,34 @@ add_action( 'after_setup_theme', 'add_thumbnail_size' );
 
 add_action('init', 'add_custom_post_type');
 function add_custom_post_type() {
+    $sliderParams = array(
+        'labels' => array(
+            'name' => '슬라이더',
+            'singular_name' => '슬라이더',
+            'add_new' => '슬라이더 추가',
+            'add_new_item' => '신규 슬라이더 추가',
+            'edit_item' => '편집',
+            'new_item' => '신규 슬라이더',
+            'all_items' => '전체 슬라이더',
+            'view_item' => '슬라이더 보기',
+            'search_items' => '슬라이더 찾기',
+            'not_found' => '찾을 수 없습니다',
+            'not_found_in_trash' => '휴지통 안에 없습니다',
+            'enter_title_here' => '슬라이더 제목을 입력',
+        ),
+        'public' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'query_var' => true,
+        'capability_type' => 'post',
+        'has_archive' => true,
+        'hierarchical' => false,
+        "supports" => array("title", "editor", "thumbnail"),
+        'menu_position' => 20,
+    );
+    register_post_type('slider', $sliderParams);
+
     $travelParams = array(
         'labels' => array(
             'name' => '여행이야기',
