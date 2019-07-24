@@ -1,3 +1,6 @@
 @mixin sp-screen {
     @media (max-width: 767px) { @content; }
 }
+@mixin sp-screen-min {
+    @media (min-width: 768px) { @content; }
+}

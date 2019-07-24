@@ -149,14 +149,19 @@ footer {
         background-repeat: no-repeat;
         background-size: cover;
         transform: scale(1.3); }
+        @media (max-width: 767px) {
+          .key-visual__container .key-visual__slider__image-container .image-pc {
+            display: none; } }
       .key-visual__container .key-visual__slider__image-container .image-sp {
-        display: none;
         width: 100%;
         height: 100%;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         transform: scale(1.3); }
+        @media (min-width: 768px) {
+          .key-visual__container .key-visual__slider__image-container .image-sp {
+            display: none; } }
 
 .travel {
   padding-bottom: 60px;
