@@ -116,6 +116,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  list-style: none;
 
   &__item {
     width: calc(50% - 12px);
@@ -164,9 +165,6 @@
   }
 }
 
-
-
-
 // 공통부분
 .image-container {
   margin-top: 20px;
@@ -202,47 +200,45 @@
     width: 100%;
     margin-bottom: 60px;
 
-    .date-and-title {
-      h3 {
-        font-size: 27px;
-        font-weight: bold;
-        margin-bottom: 0;
-      }
-
-      time {
-        font-size: 12px;
-        font-weight: lighter;
-        color: #808080;
-      }
-    }
-
     .ariticle-content {
       font-size: 16px;
       margin-bottom: 0;
     }
+  }
+}
+.date-and-title {
+  h3 {
+    font-size: 27px;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
 
-    .article-tags-container {
-      list-style: none;
-      margin-top: 20px;
+  time {
+    font-size: 12px;
+    font-weight: lighter;
+    color: #808080;
+  }
+}
+.article-tags-container {
+  list-style: none;
+  margin-top: 20px;
+  margin-bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+
+  &__article-tag {
+    background-color: #00bbb5;
+    border-radius: 10px;
+    padding: 2px 7px;
+    margin-right: 6px;
+
+    p {
+      font-size: 15px;
+      color: #ffffff;
       margin-bottom: 0;
-      display: flex;
-      flex-wrap: wrap;
 
-      &__article-tag {
-        background-color: #00bbb5;
-        border-radius: 10px;
-        padding: 2px 7px;
-        margin-right: 6px;
-
-        p {
-          font-size: 15px;
-          color: #ffffff;
-          margin-bottom: 0;
-
-          @include sp-screen {
-            font-size: 12px;
-          }
-        }
+      @include sp-screen {
+        font-size: 12px;
       }
     }
   }

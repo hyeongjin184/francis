@@ -210,7 +210,7 @@ get_header(); ?>
                                 'orderby' => 'date', // 표시순서 기준 (날짜)
                             ));
                             if ($chitchatObject->have_posts()): ?>
-                                <ul class="article-list chitchat-list">
+                                <ul class="chitchat-list">
                                     <?php
                                     while ($chitchatObject->have_posts()):$chitchatObject->the_post();
                                         $chitchatImageUrl = "";
@@ -222,7 +222,7 @@ get_header(); ?>
                                             $chitchatImageUrl = get_stylesheet_directory_uri() . "/image/dummy-image/news_thumb_noimage.jpg";
                                         }
                                         ?>
-                                        <li class="article-list__item chitchat-list__item">
+                                        <li class="chitchat-list__item">
                                             <a href="<?php the_permalink(); ?>">
                                                 <div class="image-container">
                                                     <img src="<?= $chitchatImageUrl; ?>" alt="<?php the_title(); ?>">

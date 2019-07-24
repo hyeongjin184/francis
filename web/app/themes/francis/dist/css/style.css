@@ -200,7 +200,8 @@ footer {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -ms-flex-pack: justify;
-      justify-content: space-between; }
+      justify-content: space-between;
+  list-style: none; }
   .chitchat-list__item {
     width: calc(50% - 12px);
     box-shadow: 3px 3px 5px #e3e9e5;
@@ -256,35 +257,38 @@ footer {
   .article-list__item {
     width: 100%;
     margin-bottom: 60px; }
-    .article-list__item .date-and-title h3 {
-      font-size: 27px;
-      font-weight: bold;
-      margin-bottom: 0; }
-    .article-list__item .date-and-title time {
-      font-size: 12px;
-      font-weight: lighter;
-      color: #808080; }
     .article-list__item .ariticle-content {
       font-size: 16px;
       margin-bottom: 0; }
-    .article-list__item .article-tags-container {
-      list-style: none;
-      margin-top: 20px;
-      margin-bottom: 0;
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap; }
-      .article-list__item .article-tags-container__article-tag {
-        background-color: #00bbb5;
-        border-radius: 10px;
-        padding: 2px 7px;
-        margin-right: 6px; }
-        .article-list__item .article-tags-container__article-tag p {
-          font-size: 15px;
-          color: #ffffff;
-          margin-bottom: 0; }
-          @media (max-width: 767px) {
-            .article-list__item .article-tags-container__article-tag p {
-              font-size: 12px; } }
+
+.date-and-title h3 {
+  font-size: 27px;
+  font-weight: bold;
+  margin-bottom: 0; }
+
+.date-and-title time {
+  font-size: 12px;
+  font-weight: lighter;
+  color: #808080; }
+
+.article-tags-container {
+  list-style: none;
+  margin-top: 20px;
+  margin-bottom: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  .article-tags-container__article-tag {
+    background-color: #00bbb5;
+    border-radius: 10px;
+    padding: 2px 7px;
+    margin-right: 6px; }
+    .article-tags-container__article-tag p {
+      font-size: 15px;
+      color: #ffffff;
+      margin-bottom: 0; }
+      @media (max-width: 767px) {
+        .article-tags-container__article-tag p {
+          font-size: 12px; } }
 
