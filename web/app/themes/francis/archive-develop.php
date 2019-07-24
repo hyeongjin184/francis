@@ -2,7 +2,7 @@
 get_header(); ?>
     <div id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
-            <div class="archive-japan">
+            <div class="archive-main-container archive-develop">
                 <h2>개발이야기 리스트</h2>
                 <hr>
                 <?php

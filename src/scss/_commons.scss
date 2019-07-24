@@ -14,7 +14,6 @@ footer {
   height: 180px;
 }
 
-
 // 헤더메뉴 부분
 #global-menu-list {
   display: flex;
@@ -110,5 +109,14 @@ footer {
         transform: rotate(-45deg);
       }
     }
+  }
+}
+
+.archive-page-main {
+  padding-top: 71px;
+  width: 100%;
+
+  .list-and-tags {
+    display: flex;
   }
 }

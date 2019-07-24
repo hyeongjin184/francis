@@ -110,6 +110,13 @@ footer {
         padding: 4px;
         transform: rotate(-45deg); }
 
+.archive-page-main {
+  padding-top: 71px;
+  width: 100%; }
+  .archive-page-main .list-and-tags {
+    display: -ms-flexbox;
+    display: flex; }
+
 .key-visual {
   width: 100%;
   height: 580px;
