@@ -12,19 +12,29 @@ if (have_posts()):
 
         <div id="primary" class="content-area">
             <main id="main" class="" role="main">
-                <div class="main-container">
+                <div class="single">
                     <div class="single-page">
-                        <h1 class="single-page__title">일본이야기</h1>
                         <div class="single-page__body">
-                            <div class="date-and-title">
-                                <h2 class="date-and-title__title"><?php the_title(); ?></h2>
-                                <p class="date-and-title__date"><?php the_date('Y.n.j'); ?></p>
-                            </div>
-                            <div class="image-container">
-                                <img class="image-container__image" src="<?= $japanImageUrl; ?>" alt="<?php the_title(); ?>">
+                            <div class="single-image-container">
+                                <img class="single-image-container__image" src="<?= $japanImageUrl; ?>" alt="<?php the_title(); ?>">
+                                <div class="single-image-container__title-and-tags">
+                                    <div class="single-image-container__date-and-title">
+                                        <h1 class="title"><?php the_title(); ?></h1>
+                                        <p class="date">Posted on <?php the_date('Y.n.j'); ?></p>
+                                    </div>
+                                    <ul class="single-image-container__tags-container">
+                                        <?php
+                                        $japanTags = get_the_terms($post->ID, 'japan-tag');
+                                        if ($japanTags) {
+                                            foreach ($japanTags as $tag) {
+                                                echo '<li class="single-image-container__tags-containerer__tag"><p>#' . esc_html($tag->name) . '</p></li>';
+                                            }
+                                        } ?>
+                                    </ul>
+                                </div>
                             </div>
                             <div class="content-container">
-                                <p class="content-container__content"><?php the_content(); ?></p>
+                                <?php the_content(); ?>
                             </div>
                         </div>
 

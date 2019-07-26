@@ -10,6 +10,10 @@ body * {
   color: #333333;
 }
 
+main {
+  padding-top: 71px;
+}
+
 footer {
   background-color: #e3e3e3;
   height: 180px;
@@ -114,7 +118,6 @@ footer {
 }
 
 .archive-main {
-  padding-top: 71px;
   width: 100%;
 
   .archive-list-and-tags {
@@ -198,6 +201,30 @@ footer {
             color: #ffffff;
           }
         }
+      }
+    }
+  }
+}
+
+
+.single-page {
+
+  &__body {
+    .single-image-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 100%;
+      height: 700px;
+      overflow: hidden;
+
+      &__image {
+        width: 100%;
+      }
+
+      &__title-and-tags {
+        position: absolute;
       }
     }
   }
