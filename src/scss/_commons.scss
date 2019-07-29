@@ -229,6 +229,10 @@ footer {
 
       &__image {
         width: 100%;
+        height: 700px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
       }
 
       &__title-and-tags {

@@ -16,7 +16,7 @@ if (have_posts()):
                     <div class="single-page">
                         <div class="single-page__body">
                             <div class="single-image-container">
-                                <img class="single-image-container__image" src="<?= $japanImageUrl; ?>" alt="<?php the_title(); ?>">
+                                <div class="single-image-container__image" style="background-image: url('<?php echo $japanImageUrl; ?>')"></div>
                                 <div class="single-image-container__title-and-tags">
                                     <div class="single-image-container__date-and-title">
                                         <h1 class="title"><?php the_title(); ?></h1>
