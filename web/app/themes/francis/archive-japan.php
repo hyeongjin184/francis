@@ -27,21 +27,31 @@ get_header(); ?>
                                         $japanEpisodeImageUrl = "";
                                         if (has_post_thumbnail()) {
                                             // 아이캐치 이미지가 있을 경우
-                                            $japanEpisodeImageUrl = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'medium')[0];
+                                            $japanEpisodeImageUrl = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'article_thumb')[0];
                                         } else {
                                             // 아이캐치 이미지가 없을 경우
                                             $japanEpisodeImageUrl = get_stylesheet_directory_uri() . "/image/dummy/noimage.jpg";
                                         }
                                         ?>
-                                        <li>
+                                        <li class="archive-list-and-tags__list-container__list__item">
                                             <a href="<?php the_permalink(); ?>">
+                                                <div class="date-and-title">
+                                                    <h3 class="title"><?php the_title(); ?></h3>
+                                                    <time class="date">Posted on <?php the_time('Y.n.j'); ?></time>
+                                                </div>
                                                 <div class="image-container">
                                                     <img src="<?= $japanEpisodeImageUrl; ?>" alt="<?php the_title(); ?>">
                                                 </div>
-                                                <div class="date-and-title">
-                                                    <time class="date"><?php the_time('Y.n.j'); ?></time>
-                                                    <h3 class="title"><?php the_title(); ?></h3>
-                                                </div>
+                                                <p class="ariticle-content"><?= wp_trim_words(get_the_content(), 30, '⋯'); ?></p>
+                                                <ul class="article-tags-container">
+                                                <?php
+                                                $articleTags = get_the_terms($post->ID, 'japan-tag');
+                                                if ($articleTags) {
+                                                    foreach ($articleTags as $tag) {
+                                                        echo '<li class="article-tags-container__article-tag"><p>#' . esc_html($tag->name) . '</p></li>';
+                                                    }
+                                                } ?>
+                                                </ul>
                                             </a>
                                         </li>
                                     <?php
