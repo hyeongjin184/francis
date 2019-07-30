@@ -2,7 +2,7 @@
 get_header(); ?>
     <div id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
-            <div class="key-visual">
+            <div id="key-visual" class="key-visual">
                 <?php
                 $keyVisualObject = new WP_Query(array(
                     'post_type' => 'slider', // カスタム投稿名
@@ -264,12 +264,12 @@ get_header(); ?>
                     
                 </div>
                 <aside class="main-container__right">
-                    <h2>ABOUT ME</h2>
-                    <div>
-                        <div>
-                            
-                        </div>
-                        <p>
+                    <div class="about-title">
+                        <h2>自己紹介</h2>
+                    </div>
+                    <div class="about-container">
+                        <div class="about-container__image"></div>
+                        <p class="about-container__content">
                             안녕하세요. 일본 도쿄에서 개발자로 일하고 있는 한국인입니다.
                             살면서 느낀 일본에 대한 문화나, 맛집, 여행을 기록하고
                             제가 좋아하는 취미는 다 올릴 생각입니다.
