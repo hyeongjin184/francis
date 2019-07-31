@@ -29,7 +29,7 @@ get_header(); ?>
                 <?php endif;
                 wp_reset_postdata(); ?>
                 <div class="sp-scroll-icon">
-                    <p>scroll</p>
+                    <p>SCROLL DOWN</p>
                     <span></span>
                 </div>
             </div>

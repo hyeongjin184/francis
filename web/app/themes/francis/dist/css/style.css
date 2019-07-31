@@ -236,10 +236,20 @@ footer {
 .key-visual {
   width: 100%;
   height: 700px;
-  margin-bottom: 60px; }
+  margin-bottom: 60px;
+  position: relative; }
   @media (max-width: 767px) {
     .key-visual {
-      height: 100vh; } }
+      height: 100vh; }
+      .key-visual:after {
+        content: '';
+        width: 100%;
+        height: 200px;
+        position: absolute;
+        display: block;
+        z-index: 1;
+        bottom: 0;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4) 59%, #000000); } }
   .key-visual__container .key-visual__slider {
     margin: 0;
     position: relative;
@@ -286,13 +296,37 @@ footer {
           .key-visual__container .key-visual__slider__image-container .image-sp {
             display: none; } }
   .key-visual .sp-scroll-icon {
+    text-align: center;
     position: absolute;
     width: 100%;
     bottom: 0;
+    padding-bottom: 16px;
     z-index: 10; }
     @media (min-width: 768px) {
       .key-visual .sp-scroll-icon {
         display: none; } }
+    .key-visual .sp-scroll-icon p {
+      margin-bottom: 0;
+      color: #ffffff;
+      font-size: 13px; }
+    .key-visual .sp-scroll-icon span {
+      width: 30px;
+      height: 30px;
+      display: block;
+      margin: 0 auto;
+      position: relative; }
+      .key-visual .sp-scroll-icon span:before {
+        content: "";
+        width: 20px;
+        height: 20px;
+        border: 0px;
+        border-top: solid 2px #ffffff;
+        border-right: solid 2px #ffffff;
+        transform: rotate(135deg);
+        position: absolute;
+        right: 0;
+        left: 0;
+        margin: auto; }
 
 .travel {
   padding-bottom: 60px;
