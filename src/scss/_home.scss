@@ -88,7 +88,7 @@
     bottom: 0;
     padding-bottom: 16px;
     z-index: 10;
-
+    animation: icon_floating 3s linear infinite;
 
     @include sp-screen-min {
       display: none;
@@ -106,7 +106,7 @@
       display: block;
       margin: 0 auto;
       position: relative;
-
+           
       &:before {
         content: "";
         width: 20px;
@@ -118,7 +118,7 @@
         position: absolute;
         right: 0;
         left: 0;
-        margin: auto;
+        margin: auto;  
       }
     }
   }
@@ -149,9 +149,15 @@
 
       .travel-image-container {
         position: relative;
+        overflow: hidden;
 
         img {
           width: 100%;
+          transition: $cubic-bezier;
+
+          @include sp-screen {
+            filter: brightness(0.6);
+          }
         }
 
         .title-container {
@@ -165,6 +171,31 @@
             font-weight: 400;
             color: #ffffff;
             margin: 0;
+            opacity: 0;
+
+            @include sp-screen {
+              opacity: 1;
+            }
+          }
+        }
+      }
+
+      &:hover {
+        .travel-image-container {
+          img {
+            filter: brightness(0.4);
+            transform:scale(1.1);  
+            transition: $cubic-bezier;
+
+            @include sp-screen {
+              filter: brightness(0.6);
+              transform: none;
+            }
+          }
+          .title-container {
+            h3 {
+              opacity: 1;
+            }
           }
         }
       }
@@ -191,6 +222,11 @@
     .image-container {
       margin-top: 0;
       margin-bottom: 0;
+      overflow: hidden;
+
+      img {
+        transition: $cubic-bezier;
+      }
     }
 
     .chichat-info {
@@ -218,7 +254,20 @@
 
         &__article-tag {
           p {
-            font-size: 12px;
+            font-size: 13px;
+          }
+        }
+      }
+    }
+
+    &:hover {
+      .image-container {
+        img {
+          transform: scale(1.1);
+          transition: $cubic-bezier;
+
+          @include sp-screen {
+            transform: none;
           }
         }
       }

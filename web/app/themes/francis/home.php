@@ -91,7 +91,7 @@ get_header(); ?>
                         </div>
                         <div class="link-to-archive">
                             <a class="link-to-archive-btn" href="<?= get_post_type_archive_link('japan'); ?>">
-                                <span class="text">VIEW ALL</span>
+                                <span class="text">더보기</span>
                                 <span class="arrow"></span>
                             </a>
                         </div>
@@ -152,7 +152,7 @@ get_header(); ?>
                         </div>
                         <div class="link-to-archive">
                             <a class="link-to-archive-btn" href="<?= get_post_type_archive_link('develop'); ?>">
-                                <span class="text">VIEW ALL</span>
+                                <span class="text">더보기</span>
                                 <span class="arrow"></span>
                             </a>
                         </div>
@@ -260,7 +260,7 @@ get_header(); ?>
                         </div>
                         <div class="link-to-archive">
                             <a class="link-to-archive-btn" href="<?= get_post_type_archive_link('chitchat'); ?>">
-                                <span class="text">VIEW ALL</span>
+                                <span class="text">더보기</span>
                                 <span class="arrow"></span>
                             </a>
                         </div>
@@ -269,7 +269,7 @@ get_header(); ?>
                 </div>
                 <aside class="main-container__right">
                     <div class="about-title">
-                        <h2>自己紹介</h2>
+                        <h2>ABOUT</h2>
                     </div>
                     <div class="about-container">
                         <div class="about-container__image"></div>
