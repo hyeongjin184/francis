@@ -1,0 +1,66 @@
+.single-page {
+  &__body {
+    .single-image-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 100%;
+      height: 500px;
+      overflow: hidden;
+
+      &__image {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      &__title-and-tags {
+        position: absolute;
+        width: calc(100% - 200px);
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+
+        @include sp-screen {
+          width: calc(100% - 32px);
+        }
+
+        .date-and-title {
+        }
+
+        .tags-container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+
+          &__tag {
+            margin-right: 6px;
+            margin-bottom: 6px;
+            p {
+              margin: 0;
+              color: #ffffff;
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.content-container {
+  width: calc(100% - 200px);
+  max-width: 800px;
+  margin: 0 auto;
+
+  @include sp-screen {
+    width: calc(100% - 32px);
+  }
+
+  .content {
+    margin-top: 60px;
+  }
+}
