@@ -14,7 +14,7 @@
             'container'       => 'nav',
             'container_class' => 'global-navi',
             'menu_id'         => 'global-menu-list',
-            'menu_class'      => '',
+            'menu_class'      => 'global-navi__list',
         ) );
         ?>
     </div>
@@ -24,3 +24,20 @@
         <a class="page-top__link" href="#"><span class="arrow-top"></span></a>
     </div>
 </div>
+
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        var visualOffset;
+        $(window).on('load',function(){
+            visualOffset = $('#key-visual').offset().top + $('#key-visual').outerHeight();
+        });
+
+        $(window).scroll(function() {
+            if ( $(window).scrollTop() > visualOffset){
+                $('.site-header-menu').addClass("active-navi");
+            } else {
+                $('.site-header-menu').removeClass("active-navi");
+            }
+        });
+    });
+</script>

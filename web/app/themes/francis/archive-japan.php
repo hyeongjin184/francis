@@ -3,7 +3,7 @@ get_header(); ?>
     <div id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
             <div class="main-container">
-               <div class="archive-main archive-japan">    
+                <div class="archive-main archive-japan">    
                     <div class="archive-list-and-tags">
                         <div class="archive-list-and-tags__list-container">
                             <?php
