@@ -22,6 +22,10 @@ footer {
   height: 250px;
   background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4) 59%, #000000);
 
+  @include sp-screen {
+    background: transparent;
+  }
+
   &__list {
     display: flex;
     align-items: center;
@@ -30,14 +34,14 @@ footer {
     width: calc(100% - 80px);
     max-width: 1080px;
     margin: 0 auto;
-  
+
     @include sp-screen {
       width: calc(100% - 32px);
     }
-  
+
     li {
       margin-right: 30px;
-  
+
       a {
         color: #ffffff;
       }
@@ -59,7 +63,6 @@ footer {
     }
   }
 }
-
 
 // 메인 부분
 #main {
@@ -89,6 +92,105 @@ footer {
 
       @include sp-screen {
         display: none;
+      }
+    }
+  }
+}
+
+// 공통부분
+.image-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  img {
+    width: 100%;
+  }
+}
+.article-title {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333333;
+  position: relative;
+  margin-bottom: 30px;
+
+  &:before {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    background-color: $theme-yellow;
+    bottom: 5px;
+    z-index: -1;
+  }
+}
+.article-list {
+  list-style: none;
+
+  &__item {
+    width: 100%;
+    margin-bottom: 60px;
+
+    .ariticle-content {
+      font-size: 16px;
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+.date-and-title {
+  .title {
+    font-size: 27px;
+    font-weight: bold;
+    margin-bottom: 0;
+
+    @include sp-screen {
+      font-size: 22px;
+    }
+  }
+
+  .date {
+    font-size: 12px;
+    font-weight: lighter;
+    color: #808080;
+
+    @include sp-screen {
+      font-size: 11px;
+    }
+  }
+}
+
+.ariticle-content {
+  font-size: 16px;
+
+  @include sp-screen {
+    font-size: 14px;
+  }
+}
+
+.article-tags-container {
+  list-style: none;
+  margin-top: 20px;
+  margin-bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+
+  &__article-tag {
+    background-color: $theme-mint;
+    border-radius: 10px;
+    padding: 2px 7px;
+    margin-right: 6px;
+    margin-bottom: 6px;
+
+    p {
+      font-size: 15px;
+      color: #ffffff;
+      margin-bottom: 0;
+
+      @include sp-screen {
+        font-size: 12px;
       }
     }
   }
@@ -139,4 +241,3 @@ footer {
     }
   }
 }
-

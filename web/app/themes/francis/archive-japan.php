@@ -20,9 +20,9 @@ get_header(); ?>
 
             <div class="main-container">
                 <div class="archive-main">    
+                    <h2 class="selected-tag"><?= $currentSelectedTagName; ?></h2>
                     <div class="archive-list-and-tags">
                         <div class="archive-list-and-tags__list-container">
-                            <h2 class="selected-tag"><?= $currentSelectedTagName; ?></h2>
                             <?php
                             if (have_posts()): ?>
                                 <ul class="archive-list-and-tags__list-container__list">
