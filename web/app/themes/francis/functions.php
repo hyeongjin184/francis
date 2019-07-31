@@ -326,3 +326,63 @@ function my_theme_archive_title($title)
     }
     return $title;
 }
+
+
+/**
+ * ページネーション出力関数
+ * $pages : 全ページ数
+ * $range : 左右に何ページ表示するか
+ */
+function pagination($pages = 1, $range = 3)
+{
+    $pages = (int) $pages; //float型で渡ってくるので明示的にint型 へ
+    $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+
+    // 1ページしかない時
+    if ($pages === 1) return;
+
+    //2ページ以上ある時
+    if (1 !== $pages) {
+        //前の記事へのリンク
+        if ($paged > 1) {
+            echo '<a href="' . get_pagenum_link($paged - 1) . '" class="previous-page"></a>';
+        }
+
+        // 5ページ以上ある時は前後1ページと最初と最後のページを表示
+        // ただし最初と最後のページにいるときは前後2ページを表示
+        if ($pages >= 5) {
+            $range = ($paged === 1 || $paged === $pages) ? 1 : 1;
+
+            //最初のページへのリンク
+            if ($paged >= 3) {
+                echo '<a href="' . get_pagenum_link(1) . '" class="pagination-text page-number">1</a>';
+                echo '<span class="pagination-text dot-line">・・・</span>';
+            }
+        }
+
+        //ページネーション本体
+        for ($i = 1; $i <= $pages; $i++) {
+            if ($i <= $paged + $range && $i >= $paged - $range) { // $paged ± $range 以内であればページ番号を出力
+                if ($paged === $i) {
+                    echo '<span class="pagination-text current-page">' . $i . '</span>';
+                } else {
+                    echo '<a href="' . get_pagenum_link($i) . '" class="pagination-text page-number">' . $i . '</a>';
+                }
+            }
+        }
+
+        // 5ページ以上ある時
+        if ($pages >= 5) {
+            //最後のページへのリンク
+            if ($paged <= $pages - 2) {
+                echo '<span class="pagination-text dot-line">・・・</span>';
+                echo '<a href="' . get_pagenum_link($pages) . '" class="pagination-text page-number">' . $pages . '</a>';
+            }
+        }
+
+        //最後の記事へのリンク
+        if ($paged + $range < $pages) {
+            echo '<a href="' . get_pagenum_link($pages) . '" class="last-page">LAST</a>';
+        }
+    }
+}

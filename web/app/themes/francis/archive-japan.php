@@ -25,7 +25,7 @@ get_header(); ?>
                         <div class="archive-list-and-tags__list-container">
                             <?php
                             if (have_posts()): ?>
-                                <ul class="archive-list-and-tags__list-container__list">
+                                <ul class="article-list">
                                     <?php
                                     while (have_posts()):the_post();
                                         $japanEpisodeImageUrl = "";
@@ -37,7 +37,7 @@ get_header(); ?>
                                             $japanEpisodeImageUrl = get_stylesheet_directory_uri() . "/image/dummy/noimage.jpg";
                                         }
                                         ?>
-                                        <li class="archive-list-and-tags__list-container__list__item">
+                                        <li class="article-list__item">
                                             <a href="<?php the_permalink(); ?>">
                                                 <div class="date-and-title">
                                                     <h3 class="title"><?php the_title(); ?></h3>
@@ -98,6 +98,15 @@ get_header(); ?>
                                     endforeach;
                                 } ?>
                             </ul>
+                        </div>
+                    </div>
+                    <div class="pagination-block animate-transform">
+                        <div class="archive-page-pagination">
+                            <?php
+                            if (function_exists("pagination")):
+                                pagination($wp_query->max_num_pages);
+                            endif;
+                            ?>
                         </div>
                     </div>
                </div>
