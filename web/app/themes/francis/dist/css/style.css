@@ -35,8 +35,8 @@ footer {
   height: 180px; }
 
 .global-navi {
-  height: 250px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4) 59%, #000000); }
+  height: 150px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4) 49%, #000000); }
   @media (max-width: 767px) {
     .global-navi {
       background: transparent; } }
@@ -55,13 +55,48 @@ footer {
         width: calc(100% - 32px); } }
     .global-navi__list li {
       margin-right: 30px; }
+      @media (max-width: 767px) {
+        .global-navi__list li {
+          display: none; } }
       .global-navi__list li a {
         color: #ffffff; }
 
 .active-navi .global-navi {
-  background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.4) 59%, #ffffff); }
+  background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.4) 49%, #ffffff); }
+  @media (max-width: 767px) {
+    .active-navi .global-navi {
+      background: transparent; } }
   .active-navi .global-navi__list li a {
     color: #000000; }
+
+.sp-menu-fixed {
+  position: fixed;
+  right: 0;
+  width: 48px;
+  height: 48px;
+  background: #000000;
+  display: inline-block;
+  margin: 16px;
+  cursor: pointer; }
+  @media (min-width: 768px) {
+    .sp-menu-fixed {
+      display: none; } }
+
+.sp-menu-fixed span {
+  position: absolute;
+  right: 16px;
+  width: 16px;
+  height: 1px;
+  background-color: #ffffff; }
+
+.sp-menu-fixed span:nth-of-type(1) {
+  top: 20px; }
+
+.sp-menu-fixed span:nth-of-type(2) {
+  top: 24px; }
+
+.sp-menu-fixed span:nth-of-type(3) {
+  top: 28px; }
 
 #main .main-container {
   width: calc(100% - 80px);
@@ -250,6 +285,14 @@ footer {
         @media (min-width: 768px) {
           .key-visual__container .key-visual__slider__image-container .image-sp {
             display: none; } }
+  .key-visual .sp-scroll-icon {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    z-index: 10; }
+    @media (min-width: 768px) {
+      .key-visual .sp-scroll-icon {
+        display: none; } }
 
 .travel {
   padding-bottom: 60px;

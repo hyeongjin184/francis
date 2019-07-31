@@ -19,8 +19,8 @@ footer {
 
 // 헤더메뉴 부분
 .global-navi {
-  height: 250px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4) 59%, #000000);
+  height: 150px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4) 49%, #000000);
 
   @include sp-screen {
     background: transparent;
@@ -42,6 +42,10 @@ footer {
     li {
       margin-right: 30px;
 
+      @include sp-screen {
+        display: none;
+      }
+
       a {
         color: #ffffff;
       }
@@ -49,10 +53,14 @@ footer {
   }
 }
 
-// 헤더메뉴 활성화
+// 헤더메뉴 스크롤 활성화
 .active-navi {
   .global-navi {
-    background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.4) 59%, #ffffff);
+    background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.4) 49%, #ffffff);
+
+    @include sp-screen {
+      background: transparent;
+    }
 
     &__list {
       li {
@@ -62,6 +70,37 @@ footer {
       }
     }
   }
+}
+
+.sp-menu-fixed {
+  position: fixed;
+  right: 0;
+  width: 48px;
+  height: 48px;
+  background: #000000;
+  display: inline-block;
+  margin: 16px;
+  cursor: pointer;
+
+  @include sp-screen-min {
+    display: none;
+  }
+}
+.sp-menu-fixed span {
+  position: absolute;
+  right: 16px;
+  width: 16px;
+  height: 1px;
+  background-color: #ffffff;
+}
+.sp-menu-fixed span:nth-of-type(1) {
+  top: 20px;
+}
+.sp-menu-fixed span:nth-of-type(2) {
+  top: 24px;
+}
+.sp-menu-fixed span:nth-of-type(3) {
+  top: 28px;
 }
 
 // 메인 부분
@@ -143,7 +182,6 @@ footer {
   }
 }
 
-
 .date-and-title {
   .title {
     font-size: 27px;
@@ -165,7 +203,6 @@ footer {
     }
   }
 }
-
 
 .article-tags-container {
   list-style: none;

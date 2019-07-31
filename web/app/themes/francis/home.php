@@ -28,6 +28,10 @@ get_header(); ?>
                     </div>
                 <?php endif;
                 wp_reset_postdata(); ?>
+                <div class="sp-scroll-icon">
+                    <p>scroll</p>
+                    <span></span>
+                </div>
             </div>
             <div class="main-container">
                 <div class="main-container__left">

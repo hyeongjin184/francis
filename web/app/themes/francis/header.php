@@ -8,6 +8,11 @@
 <body>
 <header>
     <div class="site-header-menu">
+        <a class="sp-menu-fixed">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
         <?php
         wp_nav_menu( array(
             'theme_location'  => 'global',
@@ -27,6 +32,21 @@
 
 <script type="text/javascript">
     jQuery(document).ready(function($) {
+        $('.sp-menu-fixed').click(function(){
+            $('.site-header-menu').toggleClass('is-active');
+        });
+
+        $('.sp-menu-box').click(function(){
+            $('.site-header-menu').removeClass('is-active');
+        });
+
+        function checkWindowSize() {
+            if ( $(window).width() > 767 ) {
+                $('.site-header-menu').removeClass('is-active');
+            }
+        }
+        $(window).resize(checkWindowSize);
+            
         var visualOffset;
         $(window).on('load',function(){
             visualOffset = $('#key-visual, .archive-background').offset().top + $('#key-visual, .archive-background').outerHeight();

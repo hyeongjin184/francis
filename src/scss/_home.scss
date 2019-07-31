@@ -68,6 +68,17 @@
       }
     }
   }
+
+  .sp-scroll-icon {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    z-index: 10;
+    
+    @include sp-screen-min {
+      display: none;
+    }
+  }
 }
 
 // 여행이야기 부분
