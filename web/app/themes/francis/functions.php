@@ -1,6 +1,7 @@
 <?php
 add_action('wp_enqueue_scripts', 'enqueue_styles_and_scripts');
-function enqueue_styles_and_scripts() {
+function enqueue_styles_and_scripts()
+{
     wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
     wp_enqueue_style('style', get_stylesheet_directory_uri() . '/dist/css/style.css');
 
@@ -11,17 +12,19 @@ function enqueue_styles_and_scripts() {
 
 
 
-function add_thumbnail_size() {
-    add_image_size( 'article_thumb', 680, 465, true);
-    add_image_size( 'travel_thumb', 340, 340, true);
-    add_image_size( 'chitchat_thumb', 330, 185, true);
+function add_thumbnail_size()
+{
+    add_image_size('article_thumb', 680, 465, true);
+    add_image_size('travel_thumb', 340, 340, true);
+    add_image_size('chitchat_thumb', 330, 185, true);
 }
-add_action( 'after_setup_theme', 'add_thumbnail_size' );
+add_action('after_setup_theme', 'add_thumbnail_size');
 
 
 
 add_action('init', 'add_custom_post_type');
-function add_custom_post_type() {
+function add_custom_post_type()
+{
     $sliderParams = array(
         'labels' => array(
             'name' => '슬라이더',
@@ -234,7 +237,7 @@ register_taxonomy(
     )
 );
 
-if( function_exists('acf_add_local_field_group') ):
+if (function_exists('acf_add_local_field_group')) :
 
     acf_add_local_field_group(array(
         'key' => 'group_Slider',
@@ -307,5 +310,19 @@ if( function_exists('acf_add_local_field_group') ):
         'active' => true,
         'description' => '',
     ));
-    
-    endif;
+
+endif;
+
+
+
+
+add_filter('get_the_archive_title', 'my_theme_archive_title');
+function my_theme_archive_title($title)
+{
+    if (is_post_type_archive()) {
+        $title = post_type_archive_title('', false);
+    } elseif (is_tax()) {
+        $title = single_term_title('', false);
+    }
+    return $title;
+}

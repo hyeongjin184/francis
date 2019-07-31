@@ -2,24 +2,27 @@
 get_header(); ?>
     <div id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
-            <div class="archive-background archive-background-japan"></div>
+            <?php
+            $currentSelectedTagName = '#전체';
+            $currentSelectedTagSlug = get_query_var('japan-tag');
+            if (!empty($currentSelectedTagSlug)) {
+                $currentSelectedTagName = '#' . get_term_by('slug', $currentSelectedTagSlug, 'japan-tag')->name;
+            }
+            ?>
+            <div class="archive-background archive-background-japan">
+                <div class="title-and-seleted-tag">
+                    <div class="title-and-seleted-tag__title-container">
+                        <h1 class="title"><?php the_archive_title(); ?></h1>
+                    </div>
+                    <h2 class="title-and-seleted-tag__selected-tag"><?= $currentSelectedTagName; ?></h2>
+                </div>
+            </div>
+
             <div class="main-container">
                 <div class="archive-main">    
                     <div class="archive-list-and-tags">
                         <div class="archive-list-and-tags__list-container">
-                            <?php
-                            $currentSelectedTagName = '#전체';
-                            $currentSelectedTagSlug = get_query_var('japan-tag');
-                            if (!empty($currentSelectedTagSlug)) {
-                                $currentSelectedTagName = '#' . get_term_by('slug', $currentSelectedTagSlug, 'japan-tag')->name;
-                            }
-                            ?>
-                            <div class="title-and-seleted-tag">
-                                <div class="title-and-seleted-tag__title-container">
-                                    <h1 class="title">일본이야기</h1>
-                                </div>
-                                <h2 class="title-and-seleted-tag__selected-tag"><?= $currentSelectedTagName; ?></h2>
-                            </div>
+                            
                             <?php
                             if (have_posts()): ?>
                                 <ul class="archive-list-and-tags__list-container__list">
