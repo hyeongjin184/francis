@@ -1,9 +1,13 @@
 .archive-background {
-
+  width: 100%;
+  height: 700px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .archive-background-japan {
-    
+  background-image: url("../../images/japan-background.jpg");
 }
 
 .archive-main {

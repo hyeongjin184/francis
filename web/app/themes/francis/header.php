@@ -29,7 +29,7 @@
     jQuery(document).ready(function($) {
         var visualOffset;
         $(window).on('load',function(){
-            visualOffset = $('#key-visual').offset().top + $('#key-visual').outerHeight();
+            visualOffset = $('#key-visual, .archive-background').offset().top + $('#key-visual, .archive-background').outerHeight();
         });
 
         $(window).scroll(function() {
