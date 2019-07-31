@@ -20,26 +20,29 @@
 
     .title {
       margin-bottom: 10px;
-      font-size: 30px;
-      font-weight: 400;
+      font-size: 35px;
+      font-weight: bold;
+      letter-spacing: 2.5px;
       display: inline-block;
       position: relative;
+      color: #ffffff;
+      z-index: 1000;
     }
-  }
-  &__selected-tag {
-    font-size: 20px;
-    font-weight: bold;
-    color: $theme-mint;
-    text-align: center;
-    background-color: #ffffff;
-    display: inline-block;
-    margin-bottom: 0;
-    padding: 0 10px;
   }
 }
 
 .archive-main {
   width: 100%;
+  
+  .selected-tag {
+    font-size: 30px;
+    font-weight: bold;
+    color: $theme-mint;
+    text-align: center;
+    background-color: #ffffff;
+    display: inline-block;
+    margin-bottom: 25px;
+  }
 
   .archive-list-and-tags {
     display: flex;

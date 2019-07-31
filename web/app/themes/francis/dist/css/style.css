@@ -352,22 +352,24 @@ footer {
     text-align: center; }
     .title-and-seleted-tag__title-container .title {
       margin-bottom: 10px;
-      font-size: 30px;
-      font-weight: 400;
+      font-size: 35px;
+      font-weight: bold;
+      letter-spacing: 2.5px;
       display: inline-block;
-      position: relative; }
-  .title-and-seleted-tag__selected-tag {
-    font-size: 20px;
+      position: relative;
+      color: #ffffff;
+      z-index: 1000; }
+
+.archive-main {
+  width: 100%; }
+  .archive-main .selected-tag {
+    font-size: 30px;
     font-weight: bold;
     color: #00bbb5;
     text-align: center;
     background-color: #ffffff;
     display: inline-block;
-    margin-bottom: 0;
-    padding: 0 10px; }
-
-.archive-main {
-  width: 100%; }
+    margin-bottom: 25px; }
   .archive-main .archive-list-and-tags {
     display: -ms-flexbox;
     display: flex;

@@ -14,7 +14,7 @@ get_header(); ?>
                     <div class="title-and-seleted-tag__title-container">
                         <h1 class="title"><?php the_archive_title(); ?></h1>
                     </div>
-                    <h2 class="title-and-seleted-tag__selected-tag"><?= $currentSelectedTagName; ?></h2>
+            
                 </div>
             </div>
 
@@ -22,7 +22,7 @@ get_header(); ?>
                 <div class="archive-main">    
                     <div class="archive-list-and-tags">
                         <div class="archive-list-and-tags__list-container">
-                            
+                            <h2 class="selected-tag"><?= $currentSelectedTagName; ?></h2>
                             <?php
                             if (have_posts()): ?>
                                 <ul class="archive-list-and-tags__list-container__list">
