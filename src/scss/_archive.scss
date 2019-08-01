@@ -31,7 +31,7 @@
       display: inline-block;
       position: relative;
       color: #ffffff;
-      z-index: 1000;
+      z-index: 998;
 
       @include sp-screen {
         font-size: 25px;
