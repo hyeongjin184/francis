@@ -48,9 +48,8 @@ if (have_posts()):
                                         if (!empty($next_post)):
                                             $next_post_id = $next_post->ID; ?>
                                             <a class="previous-page__link" href="<?= get_the_permalink($next_post_id); ?>">
-                                                <div class="pagination-container">
-                                                    <time class="pagination-date-and-title__date"><?= get_the_time('Y.n.j', $next_post_id); ?></time>
-                                                    <p class="pagination-date-and-title__title"><?= get_the_title($next_post_id); ?></p>
+                                                <div class="pagination-container pagination-container__left">
+                                                    <p class="pagination-title"><?= get_the_title($next_post_id); ?></p>
                                                     <span class="arrow-left"></span>
                                                 </div>
                                             </a>
@@ -61,9 +60,8 @@ if (have_posts()):
                                         if (!empty($previous_post)):
                                             $previous_post_id = $previous_post->ID; ?>
                                             <a class="next-page__link" href="<?= get_the_permalink($previous_post_id); ?>">
-                                                <div class="pagination-container">
-                                                    <time class="pagination-date-and-title__date"><?= get_the_time('Y.n.j', $previous_post_id); ?></time>
-                                                    <p class="pagination-date-and-title__title"><?= get_the_title($previous_post_id); ?></p>
+                                                <div class="pagination-container pagination-container__right">
+                                                    <p class="pagination-title"><?= get_the_title($previous_post_id); ?></p>
                                                     <span class="arrow-right"></span>
                                                 </div>
                                             </a>

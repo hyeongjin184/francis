@@ -124,11 +124,15 @@
   }
 }
 
+.bottom-line {
+  margin-bottom: 60px;
+  border-bottom: 1px dashed #e0e0e0;
+}
+
+
 // 여행이야기 부분
 .travel {
   padding-bottom: 60px;
-  margin-bottom: 60px;
-  border-bottom: 1px dashed #e0e0e0;
 
   .travel-list {
     display: flex;

@@ -13,8 +13,16 @@ ul {
 }
 
 footer {
-  background-color: #e3e3e3;
-  height: 180px;
+  border-top: 1px solid #666666;
+  height: 200px;
+  width: calc(100% - 80px);
+  max-width: 1080px;
+  margin: 60px auto;
+  padding-top: 30px;
+
+  @include sp-screen {
+    width: calc(100% - 32px);
+  }
 }
 
 // 헤더메뉴 부분
@@ -286,28 +294,34 @@ footer {
   align-items: center;
   justify-content: center;
   padding-bottom: 60px;
-  margin-bottom: 60px;
-  border-bottom: 1px dashed #e0e0e0;
 
   @include sp-screen {
     padding-bottom: 30px;
-    margin-bottom: 30px;
   }
 
   a {
-    width: 150px;
-    height: 40px;
+    width: 180px;
+    height: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 2px solid #808080;
     transition: $cubic-bezier;
 
+    @include sp-screen {
+      width: 150px;
+      height: 40px;
+    }
+
     .text {
       padding: 4px 0 4px 15px;
-      font-size: 15px;
+      font-size: 17px;
       color: #808080;
       transition: $cubic-bezier;
+
+      @include sp-screen {
+        font-size: 15px;
+      }
     }
 
     .arrow {

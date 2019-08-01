@@ -35,7 +35,7 @@ get_header(); ?>
             </div>
             <div class="main-container">
                 <div class="main-container__left">
-                    <section class="japan">
+                    <section class="japan bottom-line">
                         <h2 class="article-title">일본이야기</h2>
                         <div>
                             <?php
@@ -97,7 +97,7 @@ get_header(); ?>
                         </div>
                     </section>
                     
-                    <section class="develop">
+                    <section class="develop bottom-line">
                         <h2 class="article-title">개발이야기</h2>
                         <div>
                             <?php
@@ -158,7 +158,7 @@ get_header(); ?>
                         </div>
                     </section>
 
-                    <section class="travel">
+                    <section class="travel bottom-line">
                         <h2 class="article-title">여행이야기</h2>
                         <div>
                             <?php
