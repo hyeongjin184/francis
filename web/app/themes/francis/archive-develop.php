@@ -75,15 +75,15 @@ get_header(); ?>
                                     $isTheTagSelected = 'current-selected-tag';
                                 } ?>
                                 <li class="tag-list <?= $isTheTagSelected; ?>">
-                                    <a href="<?= get_post_type_archive_link('japan'); ?>" class="tag-list__link">
+                                    <a href="<?= get_post_type_archive_link('develop'); ?>" class="tag-list__link">
                                         <p>#전체</p>
                                     </a>
                                 </li>
                                 <?php
-                                $allJapanTags = get_terms('japan-tag');
-                                if ($allJapanTags) {
-                                    foreach ($allJapanTags as $tag) :
-                                        $linkToTagLimitedArchiveJapan = get_post_type_archive_link('japan') . '?japan-tag=' . $tag->slug;
+                                $allDevelopTags = get_terms('develop-tag');
+                                if ($allDevelopTags) {
+                                    foreach ($allDevelopTags as $tag) :
+                                        $linkToTagLimitedArchiveJapan = get_post_type_archive_link('develop') . '?develop-tag=' . $tag->slug;
                                         $isTheTagSelected = '';
                                         if (urldecode($tag->slug) == $currentSelectedTagSlug) {
                                             $isTheTagSelected = 'current-selected-tag';

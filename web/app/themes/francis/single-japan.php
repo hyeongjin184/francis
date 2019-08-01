@@ -43,7 +43,7 @@ if (have_posts()):
                                     $previous_post = get_previous_post();
                                     $next_post = get_next_post();
                                     ?>
-                                    <div class="previous-page">
+                                    <div class="common-pagination previous-page">
                                         <?php
                                         if (!empty($next_post)):
                                             $next_post_id = $next_post->ID; ?>
@@ -56,7 +56,7 @@ if (have_posts()):
                                             </a>
                                         <?php endif; ?>
                                     </div>
-                                    <div class="next-page">
+                                    <div class="common-pagination next-page">
                                         <?php
                                         if (!empty($previous_post)):
                                             $previous_post_id = $previous_post->ID; ?>
@@ -73,7 +73,8 @@ if (have_posts()):
 
                                 <div class="link-to-archive">
                                     <a class="link-to-archive__btn" href="<?= get_post_type_archive_link('japan'); ?>">
-                                        <span class="text">일본이야기 목록</span>
+                                        <span class="text">일본이야기로</span>
+                                        <span class="arrow"></span>
                                     </a>
                                 </div>
                             </div>

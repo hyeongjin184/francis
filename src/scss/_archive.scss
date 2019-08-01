@@ -1,13 +1,13 @@
 .archive-background-container {
   width: 100%;
-  height: 500px;
+  height: 700px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
 
   @include sp-screen {
-    height: 250px;
+    height: 300px;
   }
 }
 
@@ -34,6 +34,9 @@
 }
 .archive-background-develop {
   background-image: url("../../images/develop.jpeg");
+}
+.archive-background-chitchat {
+  background-image: url("../../images/chitchat.jpg");
 }
 
 .title-and-seleted-tag {

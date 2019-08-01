@@ -49,7 +49,7 @@
             
         var visualOffset;
         $(window).on('load',function(){
-            visualOffset = $('#key-visual, .archive-background').offset().top + $('#key-visual, .archive-background').outerHeight();
+            visualOffset = $('#key-visual, .archive-background, .single-image-container').offset().top + $('#key-visual, .archive-background, .single-image-container').outerHeight();
         });
 
         $(window).scroll(function() {
