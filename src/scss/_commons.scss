@@ -58,6 +58,7 @@ footer {
 
       a {
         color: #ffffff;
+        font-size: 18px;
       }
     }
   }
@@ -176,6 +177,7 @@ footer {
     &__right {
       width: 30%;
       margin-left: 32px;
+      margin-top: 82px;
 
       @include sp-screen {
         display: none;
@@ -293,14 +295,19 @@ footer {
   }
 
   a {
+    width: 150px;
+    height: 40px;
     display: flex;
+    align-items: center;
+    justify-content: center;
     border: 2px solid #808080;
-    border-radius: 15px;
+    transition: $cubic-bezier;
 
     .text {
       padding: 4px 0 4px 15px;
-      font-size: 14px;
+      font-size: 15px;
       color: #808080;
+      transition: $cubic-bezier;
     }
 
     .arrow {
@@ -319,6 +326,51 @@ footer {
         display: inline-block;
         padding: 4px;
         transform: rotate(-45deg);
+        transition: $cubic-bezier;
+      }
+    }
+
+    &:hover {
+      background-color: #808080;
+      transition: $cubic-bezier;
+
+      @include sp-screen {
+        background-color: #ffffff;
+      }
+
+      .text {
+        color: #ffffff;
+        transition: $cubic-bezier;
+
+        @include sp-screen {
+          color: #808080;
+        }
+      }
+
+      .arrow {
+        &:before {
+          content: "";
+          top: 10px;
+          left: 5px;
+          position: absolute;
+          border: solid #ffffff;
+          border-width: 0 2px 2px 0;
+          display: inline-block;
+          padding: 4px;
+          transform: rotate(-45deg);
+          transition: $cubic-bezier;
+
+          @include sp-screen {
+            top: 10px;
+            left: 5px;
+            position: absolute;
+            border: solid #808080;
+            border-width: 0 2px 2px 0;
+            display: inline-block;
+            padding: 4px;
+            transform: rotate(-45deg);
+          }
+        }
       }
     }
   }

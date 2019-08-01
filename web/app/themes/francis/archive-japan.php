@@ -9,12 +9,12 @@ get_header(); ?>
                 $currentSelectedTagName = '#' . get_term_by('slug', $currentSelectedTagSlug, 'japan-tag')->name;
             }
             ?>
-            <div class="archive-background archive-background-japan">
+            <div class="archive-background-container">
+                <div class="archive-background archive-background-japan"></div>
                 <div class="title-and-seleted-tag">
                     <div class="title-and-seleted-tag__title-container">
                         <h1 class="title"><?php the_archive_title(); ?></h1>
                     </div>
-            
                 </div>
             </div>
 
@@ -100,7 +100,7 @@ get_header(); ?>
                             </ul>
                         </div>
                     </div>
-                    <div class="pagination-block animate-transform">
+                    <div class="pagination-block">
                         <div class="archive-page-pagination">
                             <?php
                             if (function_exists("pagination")):
