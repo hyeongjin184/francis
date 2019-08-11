@@ -67,6 +67,19 @@ footer {
       a {
         color: #ffffff;
         font-size: 18px;
+        padding: 0 10px;
+        transition: $cubic-bezier;
+
+        &:hover {
+          background-color: #ffffff;
+          color: #000000;
+          transition: $cubic-bezier;
+
+          @include sp-screen {
+            background-color: transparent;
+            color: #ffffff;
+          }
+        }
       }
     }
   }
@@ -88,6 +101,17 @@ footer {
 
           @include sp-screen {
             color: #ffffff;
+          }
+
+          &:hover {
+            background-color: #000000;
+            color: #ffffff;
+            transition: $cubic-bezier;
+  
+            @include sp-screen {
+              background-color: transparent;
+            
+            }
           }
         }
       }
@@ -126,7 +150,7 @@ footer {
       }
     }
   }
-  
+
   // 클릭시 햄버거메뉴 엑스표로 변환
   .sp-menu-fixed {
     span:nth-of-type(1) {
