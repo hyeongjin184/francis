@@ -829,7 +829,7 @@ footer {
           height: 50px;
           overflow: hidden;
           transition: 600ms cubic-bezier(0.11, 0.45, 0.54, 0.91);
-          color: #00bbb5; }
+          color: #000000; }
           @media (max-width: 767px) {
             .single-page__pagination .common-pagination a .pagination-container .pagination-title {
               max-width: none;
@@ -850,7 +850,7 @@ footer {
             content: "";
             width: 16px;
             height: 2px;
-            background-color: #00bbb5;
+            background-color: #000000;
             position: absolute;
             top: 25px;
             left: 0;
@@ -859,7 +859,7 @@ footer {
             content: "";
             width: 0;
             height: 10px;
-            border-right: 2px solid #00bbb5;
+            border-right: 2px solid #000000;
             transform: rotate(-135deg);
             position: absolute;
             top: 18px;
@@ -880,7 +880,7 @@ footer {
             content: "";
             width: 16px;
             height: 2px;
-            background-color: #00bbb5;
+            background-color: #000000;
             position: absolute;
             top: 25px;
             right: 0;
@@ -889,14 +889,14 @@ footer {
             content: "";
             width: 0;
             height: 10px;
-            border-right: 2px solid #00bbb5;
+            border-right: 2px solid #000000;
             transform: rotate(135deg);
             position: absolute;
             top: 18px;
             right: 3px;
             transition: 600ms cubic-bezier(0.11, 0.45, 0.54, 0.91); }
       .single-page__pagination .common-pagination a:hover {
-        background-color: #00bbb5;
+        background-color: #000000;
         transition: 600ms cubic-bezier(0.11, 0.45, 0.54, 0.91); }
         @media (max-width: 767px) {
           .single-page__pagination .common-pagination a:hover {
@@ -906,27 +906,27 @@ footer {
           transition: 600ms cubic-bezier(0.11, 0.45, 0.54, 0.91); }
           @media (max-width: 767px) {
             .single-page__pagination .common-pagination a:hover .pagination-container .pagination-title {
-              color: #00bbb5; } }
+              color: #000000; } }
         .single-page__pagination .common-pagination a:hover .pagination-container__left .arrow-left:before {
           background-color: #ffffff; }
           @media (max-width: 767px) {
             .single-page__pagination .common-pagination a:hover .pagination-container__left .arrow-left:before {
-              background-color: #00bbb5; } }
+              background-color: #000000; } }
         .single-page__pagination .common-pagination a:hover .pagination-container__left .arrow-left:after {
           border-right: 2px solid #ffffff; }
           @media (max-width: 767px) {
             .single-page__pagination .common-pagination a:hover .pagination-container__left .arrow-left:after {
-              border-right: 2px solid #00bbb5; } }
+              border-right: 2px solid #000000; } }
         .single-page__pagination .common-pagination a:hover .pagination-container__right .arrow-right:before {
           background-color: #ffffff; }
           @media (max-width: 767px) {
             .single-page__pagination .common-pagination a:hover .pagination-container__right .arrow-right:before {
-              background-color: #00bbb5; } }
+              background-color: #000000; } }
         .single-page__pagination .common-pagination a:hover .pagination-container__right .arrow-right:after {
           border-right: 2px solid #ffffff; }
           @media (max-width: 767px) {
             .single-page__pagination .common-pagination a:hover .pagination-container__right .arrow-right:after {
-              border-right: 2px solid #00bbb5; } }
+              border-right: 2px solid #000000; } }
 
 .content-container {
   width: calc(100% - 200px);

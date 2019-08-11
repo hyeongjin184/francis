@@ -126,7 +126,8 @@ footer {
       }
     }
   }
-
+  
+  // 클릭시 햄버거메뉴 엑스표로 변환
   .sp-menu-fixed {
     span:nth-of-type(1) {
       transform: translateY(4px) rotate(-45deg);
