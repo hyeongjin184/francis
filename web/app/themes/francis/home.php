@@ -28,6 +28,9 @@ get_header(); ?>
                     </div>
                 <?php endif;
                 wp_reset_postdata(); ?>
+                <div class="main-logo-container">
+                    <img src="<?= get_stylesheet_directory_uri() ?>/images/main-logo.png" alt="">
+                </div>
                 <div class="sp-scroll-icon">
                     <p>SCROLL DOWN</p>
                     <span></span>
@@ -268,9 +271,6 @@ get_header(); ?>
                     
                 </div>
                 <aside class="main-container__right">
-                    <div class="about-title">
-                        <h2>ABOUT</h2>
-                    </div>
                     <div class="about-container">
                         <div class="about-container__image"></div>
                         <p class="about-container__content">

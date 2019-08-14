@@ -12,17 +12,8 @@ ul {
   list-style: none;
 }
 
-footer {
-  border-top: 1px solid #666666;
-  height: 200px;
-  width: calc(100% - 80px);
-  max-width: 1080px;
-  margin: 60px auto;
-  padding-top: 30px;
-
-  @include sp-screen {
-    width: calc(100% - 32px);
-  }
+a {
+  text-decoration: none;
 }
 
 // 헤더메뉴 부분
@@ -107,10 +98,9 @@ footer {
             background-color: #000000;
             color: #ffffff;
             transition: $cubic-bezier;
-  
+
             @include sp-screen {
               background-color: transparent;
-            
             }
           }
         }
@@ -222,7 +212,6 @@ footer {
     &__right {
       width: 25%;
       margin-left: 32px;
-      margin-top: 82px;
 
       @include sp-screen {
         display: none;
@@ -343,6 +332,7 @@ footer {
     align-items: center;
     justify-content: center;
     border: 2px solid #808080;
+    background-color: #808080;
     transition: $cubic-bezier;
 
     @include sp-screen {
@@ -353,7 +343,7 @@ footer {
     .text {
       padding: 4px 0 4px 15px;
       font-size: 17px;
-      color: #808080;
+      color: #ffffff;
       transition: $cubic-bezier;
 
       @include sp-screen {
@@ -372,7 +362,7 @@ footer {
         top: 10px;
         left: 5px;
         position: absolute;
-        border: solid #808080;
+        border: solid #ffffff;
         border-width: 0 2px 2px 0;
         display: inline-block;
         padding: 4px;
@@ -382,19 +372,19 @@ footer {
     }
 
     &:hover {
-      background-color: #808080;
+      background-color: transparent;
       transition: $cubic-bezier;
 
       @include sp-screen {
-        background-color: #ffffff;
+        background-color: #808080;
       }
 
       .text {
-        color: #ffffff;
+        color: #808080;
         transition: $cubic-bezier;
 
         @include sp-screen {
-          color: #808080;
+          color: #ffffff;
         }
       }
 
@@ -404,7 +394,7 @@ footer {
           top: 10px;
           left: 5px;
           position: absolute;
-          border: solid #ffffff;
+          border: solid #808080;
           border-width: 0 2px 2px 0;
           display: inline-block;
           padding: 4px;
@@ -415,7 +405,58 @@ footer {
             top: 10px;
             left: 5px;
             position: absolute;
-            border: solid #808080;
+            border: solid #ffffff;
+            border-width: 0 2px 2px 0;
+            display: inline-block;
+            padding: 4px;
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+  }
+}
+
+.link-to-archive__single-page {
+  a {
+    border: 2px solid $theme-mint;
+    background-color: $theme-mint;
+
+    &:hover {
+      background-color: transparent;
+      transition: $cubic-bezier;
+
+      @include sp-screen {
+        background-color: $theme-mint;
+      }
+
+      .text {
+        color: $theme-mint;
+        transition: $cubic-bezier;
+
+        @include sp-screen {
+          color: #ffffff;
+        }
+      }
+
+      .arrow {
+        &:before {
+          content: "";
+          top: 10px;
+          left: 5px;
+          position: absolute;
+          border: solid $theme-mint;
+          border-width: 0 2px 2px 0;
+          display: inline-block;
+          padding: 4px;
+          transform: rotate(-45deg);
+          transition: $cubic-bezier;
+
+          @include sp-screen {
+            top: 10px;
+            left: 5px;
+            position: absolute;
+            border: solid #ffffff;
             border-width: 0 2px 2px 0;
             display: inline-block;
             padding: 4px;

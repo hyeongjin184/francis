@@ -4,9 +4,9 @@ get_header();
 if (have_posts()):
     while (have_posts()):the_post(); 
         if (has_post_thumbnail()) {
-            $japanImageUrl = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large')[0]; 
+            $chitchatImageUrl = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large')[0]; 
         } else {
-            $japanImageUrl = get_stylesheet_directory_uri() . "/image/dummy-image/news_thumb_noimage.jpg";
+            $chitchatImageUrl = get_stylesheet_directory_uri() . "/image/dummy-image/news_thumb_noimage.jpg";
         }
         ?>
 
@@ -16,7 +16,7 @@ if (have_posts()):
                     <div class="single-page">
                         <div class="single-page__body">
                             <div class="single-image-container">
-                                <div class="single-image-container__image" style="background-image: url('<?php echo $japanImageUrl; ?>')"></div>
+                                <div class="single-image-container__image" style="background-image: url('<?php echo $chitchatImageUrl; ?>')"></div>
                                 <div class="single-image-container__title-and-tags">
                                     <div class="date-and-title">
                                         <h1 class="title"><?php the_title(); ?></h1>
@@ -24,9 +24,9 @@ if (have_posts()):
                                     </div>
                                     <ul class="tags-container">
                                         <?php
-                                        $japanTags = get_the_terms($post->ID, 'japan-tag');
-                                        if ($japanTags) {
-                                            foreach ($japanTags as $tag) {
+                                        $chitchatTags = get_the_terms($post->ID, 'chitchat-tag');
+                                        if ($chitchatTags) {
+                                            foreach ($chitchatTags as $tag) {
                                                 echo '<li class="tags-container__tag"><p>#' . esc_html($tag->name) . '</p></li>';
                                             }
                                         } ?>
@@ -69,9 +69,9 @@ if (have_posts()):
                                     </div>
                                 </div>
 
-                                <div class="link-to-archive <?php if (is_singular()) {echo "link-to-archive__single-page"; }?>">
-                                    <a class="link-to-archive__btn" href="<?= get_post_type_archive_link('japan'); ?>">
-                                        <span class="text">일본이야기로</span>
+                                <div class="link-to-archive">
+                                    <a class="link-to-archive__btn" href="<?= get_post_type_archive_link('chitchat'); ?>">
+                                        <span class="text">잡담이야기로</span>
                                         <span class="arrow"></span>
                                     </a>
                                 </div>

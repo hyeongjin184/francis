@@ -77,7 +77,7 @@ function add_custom_post_type()
         'has_archive' => true,
         'hierarchical' => false,
         "supports" => array("title", "editor", "thumbnail"),
-        'menu_position' => 20,
+        'menu_position' => 21,
     );
     register_post_type('travel', $travelParams);
 
@@ -105,7 +105,7 @@ function add_custom_post_type()
         'has_archive' => true,
         'hierarchical' => false,
         "supports" => array("title", "editor", "thumbnail"),
-        'menu_position' => 21,
+        'menu_position' => 22,
     );
     register_post_type('japan', $japanEpisodeParams);
 
@@ -133,9 +133,65 @@ function add_custom_post_type()
         'has_archive' => true,
         'hierarchical' => false,
         "supports" => array("title", "editor", "thumbnail"),
-        'menu_position' => 22,
+        'menu_position' => 23,
     );
     register_post_type('develop', $developEpisodeParams);
+
+    $issueEpisodeParams = array(
+        'labels' => array(
+            'name' => '이슈이야기',
+            'singular_name' => '이슈이야기',
+            'add_new' => '이슈이야기 추가',
+            'add_new_item' => '신규 이슈이야기 추가',
+            'edit_item' => '편집',
+            'new_item' => '신규 이슈이야기',
+            'all_items' => '전체 이슈이야기',
+            'view_item' => '이슈이야기 보기',
+            'search_items' => '이슈이야기 찾기',
+            'not_found' => '찾을 수 없습니다',
+            'not_found_in_trash' => '휴지통 안에 없습니다',
+            'enter_title_here' => '이슈이야기 제목을 입력',
+        ),
+        'public' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'query_var' => true,
+        'capability_type' => 'post',
+        'has_archive' => true,
+        'hierarchical' => false,
+        "supports" => array("title", "editor", "thumbnail"),
+        'menu_position' => 24,
+    );
+    register_post_type('issue', $issueEpisodeParams);
+
+    $scienceEpisodeParams = array(
+        'labels' => array(
+            'name' => 'IT이야기',
+            'singular_name' => 'IT이야기',
+            'add_new' => 'IT이야기 추가',
+            'add_new_item' => '신규 IT이야기 추가',
+            'edit_item' => '편집',
+            'new_item' => '신규 IT이야기',
+            'all_items' => '전체 IT이야기',
+            'view_item' => 'IT이야기 보기',
+            'search_items' => 'IT이야기 찾기',
+            'not_found' => '찾을 수 없습니다',
+            'not_found_in_trash' => '휴지통 안에 없습니다',
+            'enter_title_here' => 'IT이야기 제목을 입력',
+        ),
+        'public' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'query_var' => true,
+        'capability_type' => 'post',
+        'has_archive' => true,
+        'hierarchical' => false,
+        "supports" => array("title", "editor", "thumbnail"),
+        'menu_position' => 25,
+    );
+    register_post_type('science', $scienceEpisodeParams);
 
     $chitchatParams = array(
         'labels' => array(
@@ -161,7 +217,7 @@ function add_custom_post_type()
         'has_archive' => true,
         'hierarchical' => false,
         "supports" => array("title", "editor", "thumbnail"),
-        'menu_position' => 23,
+        'menu_position' => 26,
     );
     register_post_type('chitchat', $chitchatParams);
 }
